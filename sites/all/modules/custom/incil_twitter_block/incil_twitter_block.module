@@ -1,0 +1,79 @@
+<?php
+/**
+ * @file
+ * Main module file for INCIL Twitter block.
+ *
+ * This module is focused on providing a custom Twitter
+ * block for the INCIL site that is exportable.  It utilizes
+ * the Twitter block module, which is not exportable via
+ * Features at all.
+ */
+
+/**
+ * Impelements hook_help().
+ */
+function incil_twitter_block_help($path, $arg) {
+  if ($path == 'admin/help#incil_twitter_block') {
+    $output .= '<p>' . t('This module is focused on providing a custom Twitter block for the INCIL site that is exportable.  It utilizes the Twitter block module, which is not exportable via Features at all.')  . '</p>';
+    return $output;
+  }
+}
+
+/**
+ * Impelements hook_block_info().
+ */
+function incil_twitter_block_block_info() {
+  $blocks['custom_incil_twitter_block'] = array(
+    'info' => t('INCIL Twitter Block'),
+  );
+
+  return $blocks;
+}
+
+/**
+ * Impelements hook_block_view().
+ */
+function incil_twitter_block_block_view($delta = '') {
+  // This example is adapted from node.module.
+  $block = array();
+
+  switch ($delta) {
+    case 'custom_incil_twitter_block':
+      module_load_include('php', 'twitter_block', 'twitter.class');
+      $block['subject'] = t('Tweets');
+      
+      // Hard code config.
+      $config = array(
+        'search_type' => 'getTweetsFrom',
+        'search_string' => 'info_innovation',
+        'results_per_page' => 10,
+        'lang' => '',
+      );
+    
+      // Create twitter search object.
+      $twitter = new TwitterSearch($config);
+      
+      // Check cache first.
+      $twitter_reply = cache_get($cid = 'twitter_block_' . $delta, $bin = 'cache');
+      if ($twitter_reply == null) {
+        $twitter_reply = json_decode($twitter->getJSON());
+        if (!isset( $twitter_reply -> results) ) {
+          watchdog('Twitter Block', 'Recieved an unexpected reply from Twitter. ' .
+          'Perhaps just a fail whale? Our search url with query:<br/>' .
+          '@url_query', array('url_query' => $twitter -> url_query),
+          WATCHDOG_NOTICE);
+        }
+        else {
+          // Only cache good results
+          cache_set('twitter_block_' . $delta, $twitter_reply, 'cache', CACHE_TEMPORARY);
+          $block['content'] = theme('twitter_block', $twitter_reply->results );
+        }
+      }
+      else{
+        $block['content'] = theme('twitter_block', $twitter_reply->data->results );
+      }
+    break;
+  }
+  
+  return $block;
+}
