@@ -13,10 +13,13 @@
  * Impelements hook_help().
  */
 function incil_twitter_block_help($path, $arg) {
+  $output = '';
+
   if ($path == 'admin/help#incil_twitter_block') {
     $output .= '<p>' . t('This module is focused on providing a custom Twitter block for the INCIL site that is exportable.  It utilizes the Twitter block module, which is not exportable via Features at all.')  . '</p>';
-    return $output;
   }
+  
+  return $output;
 }
 
 /**
