@@ -13,7 +13,7 @@ function incil_admin_user_default_roles() {
   // Exported role: administrator
   $roles['administrator'] = array(
     'name' => 'administrator',
-    'weight' => '2',
+    'weight' => '5',
   );
 
   return $roles;
