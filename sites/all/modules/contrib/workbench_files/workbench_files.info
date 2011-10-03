@@ -1,0 +1,5 @@
+name = Workbench Files
+description = File-related features for the Workbench editorial suite.
+package = Workbench
+core = 7.x
+dependencies[] = workbench
