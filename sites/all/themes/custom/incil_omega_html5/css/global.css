@@ -1,0 +1,55 @@
+/* This file will hold the main styles for your website. */
+
+/**
+ * General styles
+ */
+ 
+ 
+/**
+ * Basic layout styles
+ */
+#section-header,
+#section-footer {
+  background-color: #666666;
+  color: #FFFFFF;
+}
+
+#section-header a,
+#section-footer a {
+  color: #FFFFFF;
+}
+
+#section-header {
+  margin-bottom: 10px;
+  box-shadow: 0px 5px 5px #999999;
+}
+
+
+/**
+ * Menus
+ */
+.region-user-second .block-menu h2.block-title {
+  display: none;
+}
+
+.region-user-second .block-menu ul.menu {
+  list-style: none;
+}
+
+.region-user-second .block-menu ul.menu li {
+  display: block;
+  float: right;
+}
+
+.region-header-second .block-menu h2.block-title {
+  display: none;
+}
+
+.region-header-second .block-menu ul.menu {
+  list-style: none;
+}
+
+.region-header-second .block-menu ul.menu li {
+  display: block;
+  float: right;
+}
