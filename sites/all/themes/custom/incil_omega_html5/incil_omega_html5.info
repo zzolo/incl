@@ -20,11 +20,13 @@ regions[user_second] = User Bar Second
 regions[branding] = Branding
 regions[menu] = Menu
 
-regions[sidebar_first] = Sidebar First
+;regions[sidebar_first] = Sidebar First
 regions[sidebar_second] = Sidebar Second
 
 regions[header_first] = Header First
 regions[header_second] = Header Second
+
+regions[top] = Top
 
 regions[preface_first] = Preface First
 regions[preface_second] = Preface Second
@@ -44,6 +46,7 @@ zones[user] = User
 zones[branding] = Branding
 zones[menu] = Menu
 zones[header] = Header
+zones[top] = Top
 zones[preface] = Preface
 zones[content] = Content
 zones[postscript] = Postscript
@@ -370,6 +373,26 @@ settings[alpha_region_footer_second_columns] = '12'
 settings[alpha_region_footer_second_suffix] = ''
 settings[alpha_region_footer_second_weight] = '2'
 settings[alpha_region_footer_second_css] = ''
+
+
+settings[alpha_zone_top_equal_height_container] = ''
+settings[alpha_zone_top_wrapper] = '1'
+settings[alpha_zone_top_force] = ''
+settings[alpha_zone_top_section] = 'content'
+settings[alpha_zone_top_weight] = '-10'
+settings[alpha_zone_top_columns] = '12'
+settings[alpha_zone_top_primary] = ''
+settings[alpha_zone_top_css] = ''
+settings[alpha_zone_top_wrapper_css] = ''
+settings[alpha_region_top_equal_height_container] = ''
+settings[alpha_region_top_equal_height_element] = ''
+settings[alpha_region_top_force] = '1'
+settings[alpha_region_top_zone] = 'top'
+settings[alpha_region_top_prefix] = ''
+settings[alpha_region_top_columns] = '12'
+settings[alpha_region_top_suffix] = ''
+settings[alpha_region_top_weight] = '1'
+settings[alpha_region_top_css] = ''
 
 ; Information added by drupal.org packaging script on 2011-08-23
 version = "7.x-3.0"
