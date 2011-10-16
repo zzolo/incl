@@ -1,24 +1,28 @@
 name = INCIL
-description = Custom theme for IN CIL.
+description = Custom theme for INCIL.
 version = VERSION
 core = 7.x
 
 ; Stylesheets
-stylesheets[all][] = css/layout.css
 stylesheets[all][] = css/style.css
 stylesheets[print][] = css/print.css
 
+; Scripts
+scripts[] = js/incil.js
+
 ; Regions
-regions[header] = Header
-regions[help] = Help
 regions[page_top] = Page top
-regions[page_bottom] = Page bottom
+regions[header_top] = Header top
+regions[header_bottom] = Header bottom
+regions[banner] = Banner
 regions[highlighted] = Highlighted
-regions[featured] = Featured
+regions[help] = Help
 regions[content] = Content
-regions[sidebar_first] = Sidebar first
-regions[sidebar_second] = Sidebar second
-regions[footer] = Footer
+regions[sidebar_right] = Sidebar right
+regions[footer_top] = Footer
+regions[footer_left] = Footer left
+regions[footer_right] = Footer right
+regions[page_bottom] = Page bottom
 
 ; Settings
 ; settings[shortcut_module_link] = 0
