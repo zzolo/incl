@@ -79,11 +79,26 @@
 }
 
 /**
- * Front specific
+ * Front specific.  WTF, even a redirect (access denied) gets
+ * handled as front page.
  */
 .context-front h1#page-title,
 .context-front .node-links,
 .context-front .block-system-main {
+  display: none;
+}
+
+.context-front.page-user h1#page-title,
+.context-front.page-user .node-links,
+.context-front.page-user .block-system-main,
+.context-front.page-toboggan-denied h1#page-title,
+.context-front.page-toboggan-denied .node-links,
+.context-front.page-toboggan-denied .block-system-main {
+  display: inherit;
+}
+
+.context-front.page-user #zone-content section,
+.context-front.page-toboggan-denied #zone-content section {
   display: none;
 }
 
