@@ -10,7 +10,7 @@
  */
 #section-header,
 #section-footer {
-  background-color: #666666;
+  background-color: #646464;
   color: #FFFFFF;
 }
 
@@ -28,7 +28,6 @@
   margin-top: 10px;
   padding-top: 10px;
 }
-
 
 /**
  * Menus
@@ -80,6 +79,15 @@
 }
 
 /**
+ * Front specific
+ */
+.context-front h1#page-title,
+.context-front .node-links,
+.context-front .block-system-main {
+  display: none;
+}
+
+/**
  * Front Slider
  */
 .block-views-front-slider-block h2.block-title {
@@ -87,12 +95,15 @@
 } 
 
 #views_slideshow_cycle_main_front_slider-block {
-  background-color: #BBBBBB;
+  background-color: #B2B2B2;
   padding: 10px;
+  min-height: 280px;
+  box-shadow: 0px 5px 5px #999999;
 }
 
 #views_slideshow_cycle_teaser_section_front_slider-block {
   background-color: #FFFFFF;
+  min-height: 290px;
 }
 
 #views_slideshow_cycle_main_front_slider-block .views-field-title {
@@ -102,4 +113,75 @@
 
 #views_slideshow_cycle_main_front_slider-block .views-row {
   width: 940px;
+}
+
+/**
+ * Callout boxes
+ */
+.block-boxes-community-callout,
+.block-boxes-project-callout,
+.block-boxes-research-callout {
+  height: 150px;
+  padding: 10px;
+  background-color: #CCCCCC;
+  box-shadow: 0px 5px 5px #999999;
+  margin-bottom: 10px;
+  color: #FFFFFF;
+}
+.block-boxes-community-callout h2,
+.block-boxes-project-callout h2,
+.block-boxes-research-callout h2 {
+  opacity: 0.7;
+}
+
+.block-boxes-project-callout {
+  background-color: #095573;
+  /* light 84abba */
+}
+.block-boxes-community-callout {
+  background-color: #7d418c;
+  /* light bfa0c7 */
+}
+.block-boxes-research-callout {
+  background-color: #0e8440;
+  /* light 86c3a0 */
+}
+
+/**
+ * Region Second blocks
+ */
+.region-sidebar-second .block {
+  background-color: #B2B2B2;
+  padding: 10px;
+  box-shadow: 0px 5px 5px #999999;
+}
+
+.region-sidebar-second .block h2.block-title {
+  background-color: #B2B2B2;
+  color: #FFFFFF;
+}
+
+.region-sidebar-second .block .content {
+  background-color: #FFFFFF;
+  padding: 10px;
+}
+
+/**
+ * Twitter block
+ */
+#twitter_block_results .twitter_block {
+  clear: both;
+}
+
+#twitter_block_results .twitter_block_user a {
+  display: none;
+}
+
+#twitter_block_results .tweet_text {
+  float: right;
+  width: 200px;
+}
+
+#twitter_block_results .item-list ul {
+  margin: 0;
 }
