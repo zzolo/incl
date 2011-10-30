@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the INCIL Admin feature.
- */
-
-include_once('incil_admin.features.inc');

@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the INCIL Devel feature.
- */
-
-include_once('incil_devel.features.inc');

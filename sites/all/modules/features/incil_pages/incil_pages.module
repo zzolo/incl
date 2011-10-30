@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the INCIL Pages feature.
- */
-
-include_once('incil_pages.features.inc');

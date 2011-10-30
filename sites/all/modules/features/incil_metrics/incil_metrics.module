@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the INCIL Metrics feature.
- */
-
-include_once('incil_metrics.features.inc');

@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the INCIL Blog feature.
- */
-
-include_once('incil_blog.features.inc');
