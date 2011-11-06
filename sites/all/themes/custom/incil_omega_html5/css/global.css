@@ -122,12 +122,21 @@
 }
 
 #views_slideshow_cycle_main_front_slider-block .views-field-title {
-  width: 200px;
+  width: 285px;
   float: right;
+  font-size: 1.4em;
+  text-align: right;
+}
+
+#views_slideshow_cycle_main_front_slider-block .views-field-title p {
+  text-decoration: none;
+  font-size: .7em;
+  color: #000000;
+  text-align: justify;
 }
 
 #views_slideshow_cycle_main_front_slider-block .views-row {
-  width: 940px;
+  width: 915px;
 }
 
 /**
