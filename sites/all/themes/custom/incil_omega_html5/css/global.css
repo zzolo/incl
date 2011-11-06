@@ -128,7 +128,8 @@
 }
 
 #views_slideshow_cycle_main_front_slider-block .views-field-body .slider-inline-title {
-  font-size: .1.3em;
+  text-align: right;
+  font-size: 1.3em;
 }
 
 #views_slideshow_cycle_main_front_slider-block .views-row {
