@@ -121,18 +121,14 @@
   min-height: 290px;
 }
 
-#views_slideshow_cycle_main_front_slider-block .views-field-title {
+#views_slideshow_cycle_main_front_slider-block .views-field-body {
   width: 285px;
   float: right;
-  font-size: 1.4em;
-  text-align: right;
+  text-align: justify;
 }
 
-#views_slideshow_cycle_main_front_slider-block .views-field-title p {
-  text-decoration: none;
-  font-size: .7em;
-  color: #000000;
-  text-align: justify;
+#views_slideshow_cycle_main_front_slider-block .views-field-body .slider-inline-title {
+  font-size: .1.3em;
 }
 
 #views_slideshow_cycle_main_front_slider-block .views-row {
