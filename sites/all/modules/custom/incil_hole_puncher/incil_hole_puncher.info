@@ -2,3 +2,4 @@ name = INCIL Hole Puncher
 description = "This module provides a really basic mechanism to keep the site closed except for a few select pages.  This is not a sustainable way to manage access.  Turn off when the site needs to be public."
 core = 7.x
 package = "INCIL Custom"
+config = admin/config/people/incil_hole_punch

@@ -82,6 +82,7 @@ function incil_hole_puncher_menu() {
   
   $items['admin/config/people/incil_hole_punch'] = array(
     'title' => 'Hole Puncher',
+    'description' => 'Provides a really basic mechanism to keep the site closed except for a few select pages.  This is not a sustainable way to manage access.  Turn off when the site needs to be public.',
     'page callback' => 'drupal_get_form',
     'page arguments' => array('incil_hole_puncher_admin'),
     'access arguments' => array('administer incil hole punch'),
