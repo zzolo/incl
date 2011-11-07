@@ -1,0 +1,94 @@
+<?php
+/**
+ * @file
+ * Main module file for INCIL Access.
+ *
+ * This module provides a really basic mechanism to 
+ * keep the site closed except for a few select pages.  
+ * This is not a sustainable way to manage access.  
+ * Turn off when the site needs to be public.
+ */
+
+/**
+ * Impelements hook_help().
+ */
+function incil_access_block_help($path, $arg) {
+  $output = '';
+
+  if ($path == 'admin/help#incil_twitter_block') {
+    $output .= '<p>' . t('This module provides a really basic mechanism to keep the site closed except for a few select pages.  This is not a sustainable way to manage access.  Turn off when the site needs to be public.')  . '</p>';
+  }
+  
+  return $output;
+}
+
+/**
+ * Impelements hook_boot().
+ */
+function incil_access_boot() {
+  // Hook init does not run on cached pages.
+  global $user;
+  
+  // For some reasons drush does not appreciate the
+  // user check and the goto.  The following is a
+  // work around.
+  if (function_exists('drush_verify_cli') && drush_verify_cli()) {
+    return;
+  }
+
+  // Default to deny access.
+  $deny = TRUE;
+
+  // Check if the person is logged in
+  if ($user->uid > 0) {
+    $deny = FALSE;
+  }
+  else {
+    // Check if certain pages.
+    $pages = array(
+      'user',
+      'user/register',
+      'user/password',
+      'user/login',
+    );
+    if (in_array($_GET['q'], $pages)) {
+      $deny = FALSE;
+    }
+  }
+  
+  // Should we deny.  drupal_access_denied() and drupal_goto()
+  // are not available, so we have to be a little more direct.
+  if ($deny) {
+    variable_get('front_page');
+    $url = incil_access_rough_url('user', array());
+    header('Location: ' . $url, TRUE, 307);
+    // We should do this, but its not available
+    // drupal_exit($url);
+  }
+}
+
+/**
+ * Create rough Drupal path.  Taken from url();
+ */
+function incil_access_rough_url($path, $options = array()) {
+  global $base_url, $base_secure_url, $base_insecure_url;
+
+  // The base_url might be rewritten from the language rewrite in domain mode.
+  if (!isset($options['base_url'])) {
+    if (isset($options['https']) && variable_get('https', FALSE)) {
+      if ($options['https'] === TRUE) {
+        $options['base_url'] = $base_secure_url;
+        $options['absolute'] = TRUE;
+      }
+      elseif ($options['https'] === FALSE) {
+        $options['base_url'] = $base_insecure_url;
+        $options['absolute'] = TRUE;
+      }
+    }
+    else {
+      $options['base_url'] = $base_url;
+    }
+  }
+  
+  return $options['base_url'] . '/' . $path;
+}
