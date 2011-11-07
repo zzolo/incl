@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * Main module file for INCIL Access.
+ * Main module file for INCIL Hole Puncher.
  *
  * This module provides a really basic mechanism to 
  * keep the site closed except for a few select pages.  
@@ -12,10 +12,10 @@
 /**
  * Impelements hook_help().
  */
-function incil_access_block_help($path, $arg) {
+function incil_hole_puncher_help($path, $arg) {
   $output = '';
 
-  if ($path == 'admin/help#incil_twitter_block') {
+  if ($path == 'admin/help#incil_hole_puncher') {
     $output .= '<p>' . t('This module provides a really basic mechanism to keep the site closed except for a few select pages.  This is not a sustainable way to manage access.  Turn off when the site needs to be public.')  . '</p>';
   }
   
@@ -25,7 +25,7 @@ function incil_access_block_help($path, $arg) {
 /**
  * Impelements hook_boot().
  */
-function incil_access_boot() {
+function incil_hole_puncher_boot() {
   // Hook init does not run on cached pages.
   global $user;
   
@@ -45,12 +45,7 @@ function incil_access_boot() {
   }
   else {
     // Check if certain pages.
-    $pages = array(
-      'user',
-      'user/register',
-      'user/password',
-      'user/login',
-    );
+    $pages = incil_hole_puncher_get_holes();
     if (in_array($_GET['q'], $pages)) {
       $deny = FALSE;
     }
@@ -60,7 +55,7 @@ function incil_access_boot() {
   // are not available, so we have to be a little more direct.
   if ($deny) {
     variable_get('front_page');
-    $url = incil_access_rough_url('user', array());
+    $url = incil_hole_puncher_rough_url('user', array());
     header('Location: ' . $url, TRUE, 307);
     // We should do this, but its not available
     // drupal_exit($url);
@@ -68,9 +63,72 @@ function incil_access_boot() {
 }
 
 /**
+ * Implements hook_permission().
+ */
+function incil_hole_puncher_permission() {
+  return array(
+    'administer incil hole punch' => array(
+      'title' => t('Administer Hole Punch'),
+      'description' => t('Allows a user to configure holes to punch out for access.'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_menu().
+ */
+function incil_hole_puncher_menu() {
+  $items = array();
+  
+  $items['admin/config/people/incil_hole_punch'] = array(
+    'title' => 'Hole Puncher',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('incil_hole_puncher_admin'),
+    'access arguments' => array('administer incil hole punch'),
+    'type' => MENU_NORMAL_ITEM,
+  );
+  
+  return $items;
+}
+
+/**
+ * Admin form
+ */
+function incil_hole_puncher_admin($form, &$form_state) {
+  $form['incil_hole_punch_holes'] = array(
+    '#type' => 'textarea',
+    '#title' => t('Holes'),
+    '#description' => t('Aliased paths to allow anonymous users access to.  Put each path on a new line.  For instance, webforms.  Path aliased are not handled here, so put in both or just the alias.'),
+    '#default_value' => variable_get('incil_hole_punch_holes', ''),
+  );
+  return system_settings_form($form);
+}
+
+/**
+ * Get Holes
+ */
+function incil_hole_puncher_get_holes() {
+  // Default is being able to login.
+  $holes = array(
+    'user',
+    'user/register',
+    'user/password',
+    'user/login',
+  );
+
+  // Look for settings
+  if ($punches = variable_get('incil_hole_punch_holes', '')) {
+    $punches = explode("\n", $punches);
+    $holes = array_merge($holes, $punches);
+  }
+
+  return $holes;
+}
+
+/**
  * Create rough Drupal path.  Taken from url();
  */
-function incil_access_rough_url($path, $options = array()) {
+function incil_hole_puncher_rough_url($path, $options = array()) {
   global $base_url, $base_secure_url, $base_insecure_url;
 
   // The base_url might be rewritten from the language rewrite in domain mode.
