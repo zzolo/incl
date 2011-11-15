@@ -72,6 +72,14 @@
 }
 
 /**
+ * The following should not be necessary, but is.
+ */
+#region-user-second,
+#region-header-second {
+  float: right;
+}
+
+/**
  * Boxes controls
  */
 .boxes-box-controls {
