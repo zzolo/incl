@@ -45,8 +45,8 @@ function incil_hole_puncher_boot() {
   }
   else {
     // Check if certain pages.
-    $pages = incil_hole_puncher_get_holes();
-    if (in_array($_GET['q'], $pages)) {
+    $holes = incil_hole_puncher_get_holes();
+    if (incil_hole_puncher_match_path($_GET['q'], $holes)) {
       $deny = FALSE;
     }
   }
@@ -99,7 +99,7 @@ function incil_hole_puncher_admin($form, &$form_state) {
   $form['incil_hole_punch_holes'] = array(
     '#type' => 'textarea',
     '#title' => t('Holes'),
-    '#description' => t('Aliased paths to allow anonymous users access to.  Put each path on a new line.  For instance, webforms.  Path aliased are not handled here, so put in both or just the alias.'),
+    '#description' => t('Aliased paths to allow anonymous users access to.  Put each path on a new line.  For instance, webforms.  Path aliased are not handled here, so put in both or just the alias.  You can also use "*" for wildcard matching.'),
     '#default_value' => variable_get('incil_hole_punch_holes', ''),
   );
   return system_settings_form($form);
@@ -116,12 +116,8 @@ function incil_hole_puncher_get_holes() {
     'user/password',
     'user/login',
   );
-
-  // Look for settings
-  if ($punches = variable_get('incil_hole_punch_holes', '')) {
-    $punches = explode("\n", $punches);
-    $holes = array_merge($holes, $punches);
-  }
+  $holes = implode("\r\n", $holes);
+  $holes .= "\r\n" . variable_get('incil_hole_punch_holes', '');
 
   return $holes;
 }
@@ -150,4 +146,29 @@ function incil_hole_puncher_rough_url($path, $options = array()) {
   }
   
   return $options['base_url'] . '/' . $path;
+}
+
+/**
+ * Custom match path.  Take from drupal_match_path().
+ */
+function incil_hole_puncher_match_path($path, $patterns) {
+  $regexps = array();
+
+  if (!isset($regexps[$patterns])) {
+    // Convert path settings to a regular expression.
+    // Therefore replace newlines with a logical or, /* with asterisks and the <front> with the frontpage.
+    $to_replace = array(
+      '/(\r\n?|\n)/', // newlines
+      '/\\\\\*/', // asterisks
+      '/(^|\|)\\\\<front\\\\>($|\|)/', // <front>
+    );
+    $replacements = array(
+      '|',
+      '.*',
+      '\1' . preg_quote(variable_get('site_frontpage', 'node'), '/') . '\2',
+    );
+    $patterns_quoted = preg_quote($patterns, '/');
+    $regexps[$patterns] = '/^(' . preg_replace($to_replace, $replacements, $patterns_quoted) . ')$/';
+  }
+  return (bool) preg_match($regexps[$patterns], $path);
 }
