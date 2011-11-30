@@ -13,3 +13,10 @@ files[] = views/openlayers_views_plugin_display_openlayers.inc
 files[] = views/openlayers_views_plugin_row_point.inc
 files[] = views/openlayers_views_plugin_row_bounding_box.inc
 files[] = views/openlayers_views_plugin_row_geometry.inc
+
+; Information added by drupal.org packaging script on 2011-11-27
+version = "7.x-2.0-beta1"
+core = "7.x"
+project = "openlayers"
+datestamp = "1322380553"
+

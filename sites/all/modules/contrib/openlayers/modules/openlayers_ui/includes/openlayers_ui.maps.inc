@@ -305,23 +305,6 @@ function openlayers_ui_maps_form($form, &$form_state, $map = FALSE, $edit = FALS
     '#group' => 'ui'
   );
 
-  // TODO: This projection stuff sucks.  See 
-  // http://drupal.org/node/1331410
-  //
-  // Grab default from submitted form values on AHAH rebuild.
-  // Start AHAH Wrapper
-  /*
-  $form['layerstyles']['ahah-start'] = array('#value' => '<div id="openlayers-layers-select">');
-  if (isset($form_state['values']['projections'])) {
-    if ($form_state['values']['projections']['easy_projection'] == 'other') {
-      $defaults['projection'] = $form_state['values']['projections']['projection'];
-    }
-    else {
-      $defaults['projection'] = $form_state['values']['projections']['easy_projection'];
-    }
-  }
-  */
-
   // Projection options
   $projections = array();
   foreach (openlayers_ui_get_projection_options() as $projection) {
@@ -337,53 +320,6 @@ function openlayers_ui_maps_form($form, &$form_state, $map = FALSE, $edit = FALS
       )
     );
   }
-
-  // Just kind of hide the projection stuff for now.
-  $form['layerstyles']['projections'] = array(
-    '#type' => 'fieldset',
-    '#title' => t('Projections'),
-    '#description' => t('<p>Projections are not well supported in
-      this module.  If you need to handle non spherical mercator projections
-      you may be better using the API directly.</p>
-      <p>Select the EPSG code of the !link_proj for your map.  The list next 
-      to each projection is the layers that support this projection.</p>',
-      array('!link_proj' => l(t('geographical projection'), 
-        'http://en.wikipedia.org/wiki/Map_projection'))
-    ),
-    '#collapsible' => TRUE,
-    '#collapsed' => TRUE,
-    '#tree' => TRUE,
-  );
-  $form['layerstyles']['projections']['easy_projection'] = array(
-    '#type' => 'radios',
-    '#title' => t('Map Projection'),
-    '#description' => t('The !link_proj of this map: all layers will either be requested or reprojected to this format.', array(
-      '!link_proj' => l(
-        t('geographical projection'),
-        'http://en.wikipedia.org/wiki/Map_projection'),
-    )),
-    '#default_value' => isset($defaults['projection']) ? $defaults['projection'] : '900913',
-    '#options' => $projections,
-    '#attributes' => array('class' => array('openlayers-form-easy-projection')),
-    '#ahah' => array(
-      'path' => 'openlayers/ahah/map',
-      'wrapper' => 'openlayers-layers-select',
-      'event' => 'change',
-      'method' => 'replace',
-    ),
-  );
-
-  // Map options properties
-  $form['layerstyles']['projections']['displayProjection'] = array(
-    '#type' => 'textfield',
-    '#title' => t('Display Projection'),
-    '#description' => t('All interaction with the map - drawing, panning, 
-      centering, and more - occurs in the display projection. The vast majority 
-      of maps use 4326 (latitude/longitude) for this value.'),
-    '#default_value' => !empty($defaults['displayProjection']) ? 
-      $defaults['displayProjection'] : '4326',
-    '#maxlength' => 6
-  );
   
   // Construct data for theme_openlayers_ui_maps_form_layers
   $form['layerstyles']['layers']['#tree'] = TRUE;
@@ -531,10 +467,64 @@ function openlayers_ui_maps_form($form, &$form_state, $map = FALSE, $edit = FALS
       $defaults['styles']['temporary'] : NULL,
   );
 
+  // TODO: This projection stuff sucks.  See 
+  // http://drupal.org/node/1331410
+  //
+  // Grab default from submitted form values on AHAH rebuild.
+  // Start AHAH Wrapper
+  /*
+  $form['layerstyles']['ahah-start'] = array('#value' => '<div id="openlayers-layers-select">');
+  if (isset($form_state['values']['projections'])) {
+    if ($form_state['values']['projections']['easy_projection'] == 'other') {
+      $defaults['projection'] = $form_state['values']['projections']['projection'];
+    }
+    else {
+      $defaults['projection'] = $form_state['values']['projections']['easy_projection'];
+    }
+  }
+  */
+
+  // Just kind of hide the projection stuff for now.
+  $form['layerstyles']['projections'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Projections'),
+    '#description' => t('<p><strong>WARNING: Projections are not well supported in
+      this module.  If you need to handle non spherical mercator projections
+      you may be better using the API directly.</strong></p>
+      <p>Select the EPSG code of the !link_proj for your map.  The list next 
+      to each projection is the layers that support this projection.</p>',
+      array('!link_proj' => l(t('geographical projection'), 
+        'http://en.wikipedia.org/wiki/Map_projection'))
+    ),
+    '#tree' => TRUE,
+  );
+  $form['layerstyles']['projections']['easy_projection'] = array(
+    '#type' => 'radios',
+    '#title' => t('Map Projection'),
+    '#description' => t('The !link_proj of this map: all layers will either be requested or reprojected to this format.', array(
+      '!link_proj' => l(
+        t('geographical projection'),
+        'http://en.wikipedia.org/wiki/Map_projection'),
+    )),
+    '#default_value' => isset($defaults['projection']) ? $defaults['projection'] : '900913',
+    '#options' => $projections,
+    '#attributes' => array('class' => array('openlayers-form-easy-projection')),
+  );
+  $form['layerstyles']['projections']['displayProjection'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Display Projection'),
+    '#description' => t('All interaction with the map - drawing, panning, 
+      centering, and more - occurs in the display projection. The vast majority 
+      of maps use 4326 (latitude/longitude) for this value.'),
+    '#default_value' => !empty($defaults['displayProjection']) ? 
+      $defaults['displayProjection'] : '4326',
+    '#maxlength' => 6
+  );
+
   // Behaviors
   $form['behaviors'] = array(
     '#title' => t('Behaviors'),
-    '#description' => t('Configure interactive map behaviors.'),
+    '#description' => t('Configure interactive map behaviors.  Behaviors are general interactions for the map, they can be anything from popups or keyboard handling.  Enable the ones you want and their respective options.  Note that some behaviors do not work with each other or one may encompass another.'),
     '#theme' => 'openlayers_ui_maps_form_behaviors',
     '#tree' => TRUE,
     '#type' => 'fieldset',
@@ -831,8 +821,9 @@ function openlayers_ui_maps_form_process($values = array()) {
  */
 function openlayers_ui_get_behavior_options($type, $defaults) {
   $form = array();
-
-  foreach (openlayers_behaviors() as $key => $plugin) {
+  $behaviors = openlayers_behaviors();
+  uasort($behaviors, '_openlayers_ui_sort_behaviors');
+  foreach ($behaviors as $key => $plugin) {
     // Get behavior class
     $class = ctools_plugin_load_class(
       'openlayers', 
@@ -887,6 +878,13 @@ function openlayers_ui_get_behavior_options($type, $defaults) {
     }
   }
   return $form;
+}
+
+/**
+ * Callback sorting behaviors alphabetically
+ */
+function _openlayers_ui_sort_behaviors($a, $b) {
+  return strnatcmp($a['title'], $b['title']);
 }
 
 /**

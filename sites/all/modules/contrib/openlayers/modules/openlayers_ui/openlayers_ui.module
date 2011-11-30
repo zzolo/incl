@@ -14,17 +14,38 @@ function openlayers_init() {
   // in the 7.x-2.x version, we want to make it really obvious that
   // administrators and developers should be updating their maps
   //
-  // Remove in 7.x-3.x
+  // There are also other requirement checks like the compatible
+  // suggestlibrary version.
   if (strpos($_GET['q'], 'admin/structure/openlayers') === 0) {
     include_once DRUPAL_ROOT . '/includes/install.inc';
     drupal_load_updates();
     module_load_include('install', 'openlayers', 'openlayers');
     $reqs = openlayers_requirements('runtime');
     foreach ($reqs as $r) {
-      drupal_set_message(t('<strong>!title</strong> !message', array(
-        '!title' => $r['value'],
-        '!message' => $r['description'],
-        )), 'error');
+      if ($r['severity'] != REQUIREMENT_OK) {
+        $severity = $r['severity'] == REQUIREMENT_WARNING ? 'warning' : 'error';
+        drupal_set_message(t('<strong>!title</strong> !message', array(
+          '!title' => $r['value'],
+          '!message' => isset($r['description']) ? $r['description'] : '',
+          )), $severity);
+      }
+    }
+    
+    // We also want to do some nice AJAX magic to get the library
+    // version to the system.
+    $check = variable_get('openlayers_ui_version_check', '');
+    if (empty($check)) {
+      // Load AJAX libraries
+      drupal_add_library('system', 'drupal.ajax');
+      drupal_add_library('system', 'jquery.form');
+      // Ensure that the library is included
+      openlayers_include();
+      // Add custom client JS
+      drupal_add_js(drupal_get_path('module', 'openlayers_ui') . '/js/openlayers_ui.admin.js');
+      // We shouldn't, but we are just gonna put a message up there
+      // to get replaced.
+      drupal_set_message('<div class="openlayers-ui-version-check-message">' . 
+        t('Checking client library via Javascript...') . '</div>', 'none');
     }
   }
 }
@@ -329,11 +350,12 @@ function openlayers_ui_menu() {
     'type' => MENU_LOCAL_TASK,
     'tab_parent' => 'admin/structure/openlayers/maps',
   );
-  $items['openlayers/ahah/map'] = array(
-    'title' => 'OpenLayers AHAH',
-    'page callback' => 'openlayers_ui_map_ahah',
-    'access callback' => TRUE,
-    'file' => 'includes/openlayers_ui.maps.inc',
+  $items['admin/structure/openlayers/callbacks/version_check/%'] = array(
+    'title' => 'OpenLayers Version Check',
+    'page callback' => 'openlayers_ui_version_check',
+    'page arguments' => array(5),
+    'access arguments' => array('administer openlayers'),
+    'file' => 'includes/openlayers_ui.admin.inc',
     'type' => MENU_CALLBACK,
   );
 
