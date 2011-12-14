@@ -9,6 +9,7 @@
  * #597C2C - Dark Green
  * #94AF6F - Light Green
  * #B3B8BD - Cool Grey
+ * #333333 - Dark Grey
  */
 
 /**
@@ -35,11 +36,29 @@ body  {
 /**
  * Header
  */
+#zone-user-wrapper {
+  margin: 30px;
+}
+
 #zone-header {
   margin-bottom: 30px;
   box-shadow: 0px 5px 5px #999999;
   background: #1D4877 url('../images/bg-header-nav.png') top left repeat-x;
   height: 60px;
+  /* Change width because of how the grid handles margins */
+  width: 940px;
+}
+
+#region-branding {
+  position: absolute;
+  top: 75px;
+  margin-left: -10px;
+}
+
+.branding-data {
+  background-color: white;
+  padding: 10px 10px;
+  width: 380px;
 }
 
 /**
@@ -92,7 +111,72 @@ body  {
   -o-transition: 500ms linear 0s;  
   transition: 500ms linear 0s;  
   outline: 0 none;
-  text-shadow: -1px 1px 8px #ffc, 1px -1px 8px #fff;  
+  text-shadow: -1px 1px 8px #FCFCFC, 1px -1px 8px #FFFFFF;  
+}
+
+/**
+ * Search top
+ */
+.block-search-form {
+  background-color: #B3B8BD;
+  padding: 3px;
+  width: 300px;
+  float: right;
+}
+
+.block-search-form .form-type-textfield input {
+  border: none;
+  height: 28px;
+  width: 266px;
+}
+
+.block-search-form #edit-actions input {
+  margin: 0;
+  padding: 0;
+  height: 28px;
+  width: 28px;
+  background: none;
+  border-radius: 0;
+  border: none;
+  float: right;
+  background-image: url('../images/search.png');
+  text-indent: 9999999px;
+}
+
+/**
+ * Social links
+ */
+.social-container {
+  width: 150px;
+  float: left;
+}
+.social-container a {
+  display: block;
+  width: 35px;
+  height: 36px;
+  margin: 0 2px;
+  float: right;
+}
+.social-container a.social-facebook {
+  background: transparent url('../images/facebook.png') top left no-repeat;
+}
+.social-container a.social-facebook:hover,
+.social-container a.social-facebook:focus {
+  background-image: url('../images/facebook-active.png');
+}
+.social-container a.social-google {
+  background: transparent url('../images/google.png') top left no-repeat;
+}
+.social-container a.social-google:hover,
+.social-container a.social-google:focus {
+  background-image: url('../images/google-active.png');
+}
+.social-container a.social-twitter {
+  background: transparent url('../images/twitter.png') top left no-repeat;
+}
+.social-container a.social-twitter:hover,
+.social-container a.social-twitter:focus {
+  background-image: url('../images/twitter-active.png');
 }
 
 /**
@@ -127,27 +211,11 @@ body  {
 }
 
 /**
- * Front specific.  WTF, even a redirect (access denied) gets
- * handled as front page.
+ * Illustration
  */
-.context-front h1#page-title,
-.context-front .node-links,
-.context-front .block-system-main {
-  display: none;
-}
-
-.context-front.page-user h1#page-title,
-.context-front.page-user .node-links,
-.context-front.page-user .block-system-main,
-.context-front.page-toboggan-denied h1#page-title,
-.context-front.page-toboggan-denied .node-links,
-.context-front.page-toboggan-denied .block-system-main {
-  display: inherit;
-}
-
-.context-front.page-user #zone-content section,
-.context-front.page-toboggan-denied #zone-content section {
-  display: none;
+.front .region-top {
+  padding-top: 120px;
+  background: transparent url('../images/home-illustration.png') top center no-repeat;
 }
 
 /**
@@ -158,7 +226,7 @@ body  {
 } 
 
 #views_slideshow_cycle_main_front_slider-block {
-  background-color: #B2B2B2;
+  background-color: #333333;
   padding: 10px;
   min-height: 280px;
   box-shadow: 0px 5px 5px #999999;
@@ -172,12 +240,18 @@ body  {
 #views_slideshow_cycle_main_front_slider-block .views-field-body {
   width: 285px;
   float: right;
-  text-align: justify;
 }
 
 #views_slideshow_cycle_main_front_slider-block .views-field-body .slider-inline-title {
-  text-align: right;
-  font-size: 1.3em;
+  font-size: 1.5em;
+  border-bottom: 1px dotted #B3B8BD;
+  margin: 1em 0;
+}
+
+#views_slideshow_cycle_main_front_slider-block .views-field-body .slider-inline-title a {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
 #views_slideshow_cycle_main_front_slider-block .views-row {
