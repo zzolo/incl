@@ -15,22 +15,16 @@
 /**
  * General styles
  */
+h1, h2, h3, h4, h5, h6,
 body  {
   color: #222222;
   font-family: Signika, Verdana, Helvetica, Arial, sans-serif;
 }
- 
-/**
- * Basic layout styles
- */
-#section-footer {
-  background-color: #646464;
-  color: #FFFFFF;
-}
 
-#section-footer {
-  margin-top: 10px;
-  padding-top: 10px;
+a,
+a:link,
+a:visited {
+  color: #597C2C;
 }
 
 /**
@@ -59,6 +53,11 @@ body  {
   background-color: white;
   padding: 10px 10px;
   width: 380px;
+}
+
+.site-name-slogan,
+.site-name-slogan a {
+  color: #1D4877;
 }
 
 /**
@@ -180,6 +179,26 @@ body  {
 }
 
 /**
+ * Footer
+ */
+
+#zone-footer {
+  background-color: #646464;
+  color: #FFFFFF;
+  /* Change width because of how the grid handles margins */
+  width: 940px;
+}
+
+#zone-footer a {
+  color: #FFFFFF;
+}
+
+#section-footer {
+  margin-top: 10px;
+  padding-top: 10px;
+}
+
+/**
  * Footer menu
  */
 .region-footer-second .block-menu h2.block-title {
@@ -294,15 +313,20 @@ body  {
  * Region Second blocks
  */
 .region-sidebar-second .block {
-  background-color: #B2B2B2;
-  padding: 10px;
-  box-shadow: 0px 5px 5px #999999;
   margin-bottom: 15px;
 }
 
+.region-sidebar-second .block a {
+  color: #94AF6F;
+}
+
 .region-sidebar-second .block h2.block-title {
-  background-color: #B2B2B2;
+  background-color: #94AF6F;
   color: #FFFFFF;
+  text-transform: uppercase;
+  padding: 0 10px;
+  font-size: 1.3em;
+  line-height: 1.6em;
 }
 
 .region-sidebar-second .block .content {
@@ -328,4 +352,16 @@ body  {
 
 #twitter_block_results .item-list ul {
   margin: 0;
+}
+
+/**
+ * Main content
+ */
+h1#page-title {
+  background-color: #B3B8BD;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  padding: 0 10px;
+  font-size: 1.3em;
+  line-height: 1.6em;
 }
