@@ -1,27 +1,30 @@
 /* This file will hold the main styles for your website. */
 
 /**
+ * Colors
+ *
+ * #1D4877 - Dark Blue
+ * #1C7CB7 - Medium Blue
+ * #699ACA - Light Blue
+ * #597C2C - Dark Green
+ * #94AF6F - Light Green
+ * #B3B8BD - Cool Grey
+ */
+
+/**
  * General styles
  */
- 
+body  {
+  color: #222222;
+  font-family: Signika, Verdana, Helvetica, Arial, sans-serif;
+}
  
 /**
  * Basic layout styles
  */
-#section-header,
 #section-footer {
   background-color: #646464;
   color: #FFFFFF;
-}
-
-#section-header a,
-#section-footer a {
-  color: #FFFFFF;
-}
-
-#section-header {
-  margin-bottom: 10px;
-  box-shadow: 0px 5px 5px #999999;
 }
 
 #section-footer {
@@ -30,7 +33,17 @@
 }
 
 /**
- * Menus
+ * Header
+ */
+#zone-header {
+  margin-bottom: 30px;
+  box-shadow: 0px 5px 5px #999999;
+  background: #1D4877 url('../images/bg-header-nav.png') top left repeat-x;
+  height: 60px;
+}
+
+/**
+ * User Menus
  */
 .region-user-second .block-menu h2.block-title {
   display: none;
@@ -45,12 +58,16 @@
   float: right;
 }
 
+/**
+ * Main nav menu
+ */
 .region-header-second .block-menu h2.block-title {
   display: none;
 }
 
 .region-header-second .block-menu ul.menu {
   list-style: none;
+  margin-top: 15px;
 }
 
 .region-header-second .block-menu ul.menu li {
@@ -58,6 +75,29 @@
   float: right;
 }
 
+.region-header-second .block-menu ul.menu li a {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 0 5px;
+}
+
+.region-header-second .block-menu ul.menu li a:hover,
+.region-header-second .block-menu ul.menu li a:focus,
+.region-header-second .block-menu ul.menu li a.active {
+  -webkit-transition: 500ms linear 0s;  
+  -moz-transition: 500ms linear 0s;  
+  -o-transition: 500ms linear 0s;  
+  transition: 500ms linear 0s;  
+  outline: 0 none;
+  text-shadow: -1px 1px 8px #ffc, 1px -1px 8px #fff;  
+}
+
+/**
+ * Footer menu
+ */
 .region-footer-second .block-menu h2.block-title {
   display: none;
 }
