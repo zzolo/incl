@@ -192,7 +192,6 @@ a:visited {
 /**
  * Footer
  */
-
 #zone-footer {
   background-color: #646464;
   color: #FFFFFF;
@@ -380,12 +379,10 @@ a:visited {
  * Main content
  */
 h1#page-title {
-  background-color: #B3B8BD;
-  color: #FFFFFF;
+  color: #1D4877;
   text-transform: uppercase;
-  padding: 0 10px;
-  font-size: 1.3em;
-  line-height: 1.6em;
+  font-size: 2em;
+  font-weight: bold;
 }
 
 /**
@@ -422,4 +419,127 @@ h1#page-title {
 
 .region-sidebar-second .block.incil-accordian-closed {
   cursor: pointer;
+}
+
+/**
+ * Tabs
+ */
+div.tabs ul.tabs li {
+  float: right;
+}
+
+ul.primary li a {
+  color: #666666;
+  background-color: #B3B8BD;
+  padding: .2em 1em 0 1em;
+}
+
+div.tabs ul.tabs li {
+  text-transform: uppercase;
+  font-size: 1.1em;
+  margin-right: 0;
+}
+
+/**
+ * View Filters
+ */
+.view-filters {
+  background-color: #B3B8BD;
+  padding: 20px;
+  margin-bottom: 10px;
+}
+
+/**
+ * Common views fields
+ */
+.views-field-field-content-image,
+.views-field-field-profile-image {
+  float: left;
+  margin: 0 10px 10px 0;
+}
+
+.views-field-title a {
+  color: #1D4877;
+  text-transform: uppercase;
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+.views-row > .views-row {
+  border-bottom: 3px solid red;
+}
+
+/**
+ * Blocks in content
+ */
+.region-content .block h2.block-title {
+  background-color: #B3B8BD;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  padding: 0 10px;
+  font-size: 1.3em;
+  line-height: 1.6em;
+  margin-bottom: 10px;
+}
+
+.region-content .block {
+  margin-bottom: 10px;
+}
+
+/**
+ * Forms
+ */
+/* This also includes node links */
+.node-links ul li a,
+.comment-links ul li a,
+.node-links ul li a:hover,
+.comment-links ul li a:hover,
+button, 
+input[type="reset"], 
+input[type="submit"], 
+input[type="button"] {
+  -webkit-appearance: none;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  background: transparent url('../images/bg-button.png') top left repeat-x;
+  cursor: pointer;
+  color: #FFFFFF;
+  font: bold 12px/1.2 Arial, sans-serif;
+  outline: 0;
+  overflow: visible;
+  padding: 3px 10px 4px;
+  text-shadow: none;
+  width: auto;
+  text-transform: uppercase;
+  border: none;
+}
+
+/**
+ * Nodes and fields
+ */
+h2.node-title {
+  color: #1D4877;
+  text-transform: uppercase;
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+h2.node-title a {
+  color: #1D4877;
+}
+
+.node .field-name-field-content-image {
+  float: left;
+  margin: 0 10px 10px 0;
+}
+
+article.node,
+div.node {
+  margin-bottom: 20px;
+}
+
+/* hide for now (not good way to do this) */
+ul li.statistics_counter {
+  display: none;
 }

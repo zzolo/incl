@@ -8,7 +8,7 @@
   <div<?php print $content_attributes; ?>>
     <div class="social-container">
       <a href="" class="social-facebook"></a>
-      <a href="" class="social-twitter"></a>
+      <a href="http://twitter.com/info_innovation" class="social-twitter"></a>
       <a href="" class="social-google"></a>
     </div>
     
