@@ -102,6 +102,8 @@ a:visited {
 .region-header-second .block-menu ul.menu li {
   display: block;
   float: right;
+  margin: 0;
+  padding: 0 5px 2px 0;
 }
 
 .region-header-second .block-menu ul.menu li a {
