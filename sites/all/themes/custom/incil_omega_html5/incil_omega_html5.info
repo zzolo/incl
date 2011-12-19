@@ -7,6 +7,9 @@ base theme = omega
 
 version = "7.x-3.0"
 
+; SCRIPTS
+
+scripts[] = js/incil_omega_html5.js
 
 ; REQUIRED CORE REGIONS
 
