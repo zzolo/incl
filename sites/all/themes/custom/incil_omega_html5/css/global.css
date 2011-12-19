@@ -30,10 +30,6 @@ a:visited {
 /**
  * Header
  */
-#zone-user-wrapper {
-  margin: 30px;
-}
-
 #zone-header {
   margin-bottom: 30px;
   box-shadow: 0px 5px 5px #999999;
@@ -45,33 +41,47 @@ a:visited {
 
 #region-branding {
   position: absolute;
-  top: 75px;
   margin-left: -10px;
+  padding: 10px 0;
+}
+
+#region-branding-second {
+  float: right;
 }
 
 .branding-data {
   background-color: white;
-  padding: 10px 10px;
+  padding: 10px 0;
   width: 380px;
 }
 
 .site-name-slogan,
 .site-name-slogan a {
   color: #1D4877;
+  width: 230px;
+}
+
+.site-slogan {
+  font-size: 13px;
+}
+
+#region-branding-second {
+  height: 70px;
+  margin-top: 15px;
 }
 
 /**
  * User Menus
  */
-.region-user-second .block-menu h2.block-title {
+#section-header .block-menu h2.block-title {
   display: none;
 }
 
-.region-user-second .block-menu ul.menu {
+#section-header .block-menu ul.menu {
   list-style: none;
 }
 
-.region-user-second .block-menu ul.menu li {
+#section-header .block-menu ul.menu li {
   display: block;
   float: right;
 }
