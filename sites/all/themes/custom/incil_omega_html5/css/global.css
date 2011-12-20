@@ -215,16 +215,28 @@ a:visited {
 
 /**
  * Footer
+ * 
+ * The wrappers for the grids work in an odd way if
+ * we want to have a consistent background that aligns
+ * with regions in other zones.
  */
 #zone-footer {
   background-color: #646464;
   color: #FFFFFF;
   /* Change width because of how the grid handles margins */
-  /* width: 940px; */
+  width: 940px;
   padding-top: 10px;
   min-height: 70px;
 }
-
+#region-footer-first {
+  margin-left: 0;
+  padding-left: 10px;
+}
+#region-footer-second {
+  margin: 0;
+  padding-right: 10px;
+  width: 450px;
+}
 #zone-footer a {
   color: #FFFFFF;
 }
