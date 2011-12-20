@@ -558,6 +558,19 @@ div.node {
 ul li.statistics_counter {
   display: none;
 }
+.submitted {
+  color: #B3B8BD;
+}
+
+/**
+ * Node teasers
+ */
+.node-teaser h2.node-title {
+  margin-bottom: 0;
+}
+.node-teaser .submitted {
+  margin-bottom: 20px;
+}
 
 /**
  * Pager
