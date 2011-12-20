@@ -443,6 +443,13 @@ div.tabs ul.tabs li {
 }
 
 /**
+ * General Views
+ */
+.view table {
+  border: none;
+}
+
+/**
  * View Filters
  */
 .view-filters {
@@ -545,3 +552,59 @@ div.node {
 ul li.statistics_counter {
   display: none;
 }
+
+/**
+ * Pager
+ *
+ * This is difficult to style correctly.
+ */
+ul.pager {
+  border: none;
+  border-top: 1px dotted #B3B8BD;
+  background: transparent;
+  border-radius: 0;
+  height: 40px;
+}
+.item-list ul.pager li.pager-previous,
+.item-list ul.pager li.pager-current,
+.item-list ul.pager li.pager-next {
+  top: 10px;
+}
+.item-list ul.pager li.pager-previous {
+  right: 100px;
+  position: absolute;
+}
+.item-list ul.pager li.pager-current {
+  right: 50px;
+  position: absolute;
+}
+.item-list ul.pager li,
+.item-list ul.pager li.pager-previous,
+.item-list ul.pager li.pager-next {
+  border: none;
+  background: none;
+}
+.item-list ul.pager li.pager-current {
+  background: #666666;
+}
+.item-list ul.pager li.pager-previous a,
+.item-list ul.pager li.pager-next a,
+.view .date-nav-wrapper ul li.date-next a,
+.view .date-nav-wrapper ul li.date-prev a {
+  background: none;
+  font-weight: bold;
+  color: #597C2C;
+  font-size: 1.5em;
+  padding-top: 0;
+}
+.view .date-nav-wrapper ul li.date-next,
+.view .date-nav-wrapper ul li.date-prev {
+  background: none;
+}
+.view .date-nav-wrapper ul {
+  border: none;
+  border-radius: 0;
+  width: 100%;
+  background: transparent;
+  padding-top: 0;
+} 
