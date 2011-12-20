@@ -90,23 +90,31 @@ a:visited {
 /**
  * Main nav menu
  */
-.region-header-second .block-menu h2.block-title {
+ 
+.region-header-second .block-menu h2.block-title,
+.region-header-second .block-nice-menus h2.block-title {
   display: none;
 }
 
-.region-header-second .block-menu ul.menu {
+.region-header-second .block-menu ul.menu,
+.region-header-second .block-nice-menus ul.nice-menu {
   list-style: none;
   margin-top: 15px;
+  float: right;
 }
 
-.region-header-second .block-menu ul.menu li {
+.region-header-second .block-menu ul.menu li,
+.region-header-second .block-nice-menus ul.nice-menu li {
   display: block;
   float: right;
   margin: 0;
   padding: 0 5px 2px 0;
+  background: none;
+  border: none;
 }
 
-.region-header-second .block-menu ul.menu li a {
+.region-header-second .block-menu ul.menu li a,
+.region-header-second .block-nice-menus ul.nice-menu li a {
   color: #FFFFFF;
   text-decoration: none;
   font-size: 1.5em;
@@ -117,13 +125,27 @@ a:visited {
 
 .region-header-second .block-menu ul.menu li a:hover,
 .region-header-second .block-menu ul.menu li a:focus,
-.region-header-second .block-menu ul.menu li a.active {
+.region-header-second .block-menu ul.menu li a.active,
+.region-header-second .block-nice-menus ul.nice-menu li a:hover,
+.region-header-second .block-nice-menus ul.nice-menu li a:active,
+.region-header-second .block-nice-menus ul.nice-menu li a:focus {
   -webkit-transition: 500ms linear 0s;  
   -moz-transition: 500ms linear 0s;  
   -o-transition: 500ms linear 0s;  
   transition: 500ms linear 0s;  
   outline: 0 none;
   text-shadow: -1px 1px 8px #FCFCFC, 1px -1px 8px #FFFFFF;  
+}
+.region-header-second .block-nice-menus ul.nice-menu li ul {
+  margin-top: 5px;
+  padding: 10px 0;
+  background-color: #699ACA;
+  border: none;
+  box-shadow: 0px 5px 5px #999999;
+}
+.region-header-second .block-nice-menus ul.nice-menu li ul li a {
+  font-size: 1em;
+  padding-left: 10px;
 }
 
 /**
