@@ -477,6 +477,12 @@ div.tabs ul.tabs li {
 .views-row > .views-row {
   border-bottom: 3px solid red;
 }
+.views-field-created {
+  color: #B3B8BD;
+}
+.views-field-name .views-label-name {
+  color: #B3B8BD;
+}
 
 /**
  * Blocks in content
@@ -607,4 +613,27 @@ ul.pager {
   width: 100%;
   background: transparent;
   padding-top: 0;
-} 
+}
+
+/**
+ * Calendar
+ */
+.region-content .view-id-event_calendar .date-nav-wrapper .date-heading h3 {
+  background-color: #B3B8BD;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  padding: 0 10px;
+  font-size: 1.3em;
+  line-height: 1.6em;
+  margin-bottom: 10px;
+  float: none;
+  width: auto;
+  margin-bottom: 35px;
+}
+.region-content .view .date-nav-wrapper ul {
+  top: 22px;
+}
+.region-content .view .date-nav-wrapper ul li.date-prev {
+  right: inherit;
+  left: 0;
+}
