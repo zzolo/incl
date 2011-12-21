@@ -391,6 +391,11 @@ a:visited {
   padding: 10px;
 }
 
+.region-sidebar-second ul li.leaf {
+  list-style: none;
+  padding-left: 1em;
+}
+
 /**
  * Twitter block
  */
@@ -488,8 +493,8 @@ div.tabs ul.tabs li {
  */
 .view-filters {
   background-color: #B3B8BD;
-  padding: 20px;
-  margin-bottom: 10px;
+  padding: 10px;
+  margin-bottom: 20px;
 }
 
 /**
@@ -508,14 +513,29 @@ div.tabs ul.tabs li {
   font-weight: bold;
 }
 
-.views-row > .views-row {
-  border-bottom: 3px solid red;
+.views-row {
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+  border-bottom: 1px dotted #B3B8BD; 
+}
+.views-row.views-row-last {
+  border: none;
 }
 .views-field-created {
   color: #B3B8BD;
 }
 .views-field-name .views-label-name {
   color: #B3B8BD;
+}
+.views-field-changed {
+  color: #B3B8BD;
+}
+.views-field-body p {
+  margin-bottom: 5px;
+}
+.views-field-view-node {
+  text-align: right;
+  text-transform: uppercase;
 }
 
 /**
@@ -535,10 +555,14 @@ div.tabs ul.tabs li {
   margin-bottom: 10px;
 }
 
+.region-content ul {
+  padding-left: 1.5em;
+}
+
 /**
  * Forms
  */
-/* This also includes node links */
+/* This also includes node links for ease of defintion */
 .node-links ul li a,
 .comment-links ul li a,
 .node-links ul li a:hover,
@@ -594,6 +618,10 @@ ul li.statistics_counter {
 }
 .submitted {
   color: #B3B8BD;
+}
+
+.node-links {
+  margin-top: 20px;
 }
 
 /**
