@@ -458,8 +458,20 @@ h1#page-title {
   list-style: none;
 }
 
-.region-sidebar-second .block.incil-accordian-closed {
+.region-sidebar-second .block.incil-accordian-closed h2,
+.region-sidebar-second .block.incil-accordian-open h2 {
   cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: top right;
+}
+
+.region-sidebar-second .block.incil-accordian-closed h2 {
+  background-image: url('../images/arrow-right.png');
+  cursor: pointer;
+}
+
+.region-sidebar-second .block.incil-accordian-open h2 {
+  background-image: url('../images/arrow-down.png');
 }
 
 /**

@@ -30,6 +30,7 @@ Drupal.behaviors.incilThemeAccordian = {
         else {
           $blocks.find('div.content').slideUp('normal');
         }
+        $blocks.removeClass('incil-accordian-open');
         $blocks.addClass('incil-accordian-closed');
         
         // Show specific
