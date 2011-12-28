@@ -1,0 +1,17 @@
+
+name = Media: Archive
+description = Provides Archive support to the Media module.
+package = "Media"
+core = 7.x
+files[] = media_archive.module
+files[] = MediaArchiveStreamWrapper.inc
+files[] = media_archive.admin.inc
+files[] = includes/media_archive.styles.inc
+dependencies[] = media_internet
+
+; Information added by drupal.org packaging script on 2011-05-31
+version = "7.x-1.0-beta1"
+core = "7.x"
+project = "media_archive"
+datestamp = "1306873316"
+

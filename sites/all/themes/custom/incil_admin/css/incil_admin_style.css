@@ -37,3 +37,10 @@ fieldset.filter-wrapper.form-wrapper .fieldset-wrapper {
   right: inherit;
   left: 10%;
 }
+
+/**
+ * Media module
+ */
+.media-provider {
+  margin: 0 10px 10px 20px;
+}
