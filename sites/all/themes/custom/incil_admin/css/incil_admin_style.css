@@ -1,0 +1,39 @@
+/**
+ * Main CSS file for INCIL Admin theme.
+ */
+
+/**
+ * Form goodness
+ */
+input.form-autocomplete, 
+input.form-text, 
+textarea.form-textarea, 
+select.form-select {
+  border-color: #CCCCCC;
+}
+
+.form-wrapper {
+  margin-bottom: 25px;
+}
+
+.filter-wrapper .fieldset-content {
+  height: auto;
+}
+
+.form-type-select {
+  min-height: 25px;
+}
+
+fieldset.filter-wrapper.form-wrapper {
+  padding-top: 0;
+  margin-bottom: 0;
+}
+
+fieldset.filter-wrapper.form-wrapper .fieldset-wrapper {
+  margin-top: 0;
+}
+
+.page-content .form-item .description {
+  right: inherit;
+  left: 10%;
+}

@@ -1,0 +1,12 @@
+name = INCIL Admin
+description = An admin subtheme.
+base theme = rubik
+core = 7.x
+engine = phptemplate
+
+regions[content] = Content
+regions[help] = Help
+regions[page_top] = Page top
+regions[page_bottom] = Page bottom
+
+stylesheets[screen][] = css/incil_admin_style.css
