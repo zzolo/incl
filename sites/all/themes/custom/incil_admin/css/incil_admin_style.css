@@ -1,6 +1,13 @@
 /**
  * Main CSS file for INCIL Admin theme.
  */
+ 
+/**
+ * General styles
+ */
+p {
+  margin-bottom: .5em;
+}
 
 /**
  * Form goodness
@@ -43,4 +50,28 @@ fieldset.filter-wrapper.form-wrapper .fieldset-wrapper {
  */
 .media-provider {
   margin: 0 10px 10px 20px;
+}
+
+/**
+ * TinyMCE Content editing
+ */
+#tinymce {
+  padding: .75em;
+}
+#tinymce p {
+  margin-bottom: 1.5em;
+}
+#tinymce ul,
+#tinymce ul li {
+  list-style-type: disc;
+  list-style-position: inside;
+}
+#tinymce ol,
+#tinymce ol li {
+  list-style-type: decimal;
+  list-style-position: inside;
+}
+#tinymce ul,
+#tinymce ol {
+  margin-bottom: 1.5em;
 }
