@@ -186,17 +186,26 @@ a:visited {
 }
 .social-container a {
   display: block;
-  width: 35px;
-  height: 36px;
-  margin: 0 2px;
+  width: 38px;
+  height: 40px;
+  margin: -2px 2px;
   float: right;
+  background: transparent url('../images/facebook-twitter-sprite.png');
+  background-repeat: no-repeat;
 }
 .social-container a.social-facebook {
-  background: transparent url('../images/facebook.png') top left no-repeat;
+  background-position: 0px 0px;
 }
 .social-container a.social-facebook:hover,
 .social-container a.social-facebook:focus {
-  background-image: url('../images/facebook-active.png');
+  background-position: 0 -40px;
+}
+.social-container a.social-twitter {
+  background-position: -38px 0;
+}
+.social-container a.social-twitter:hover,
+.social-container a.social-twitter:focus {
+  background-position: -38px -40px;
 }
 .social-container a.social-google {
   background: transparent url('../images/google.png') top left no-repeat;
@@ -204,13 +213,6 @@ a:visited {
 .social-container a.social-google:hover,
 .social-container a.social-google:focus {
   background-image: url('../images/google-active.png');
-}
-.social-container a.social-twitter {
-  background: transparent url('../images/twitter.png') top left no-repeat;
-}
-.social-container a.social-twitter:hover,
-.social-container a.social-twitter:focus {
-  background-image: url('../images/twitter-active.png');
 }
 
 /**
