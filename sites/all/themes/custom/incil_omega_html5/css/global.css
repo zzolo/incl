@@ -7,6 +7,7 @@
  * #F15C22 - Link:hover orange
  * #FCB034 - Widget header orange
  * #6EB43F - Widget header green
+ * #002D62 - Dark blue page title
  *
  * Old colors:
  *
@@ -46,7 +47,7 @@ a:hover {
 #zone-header {
   margin-bottom: 30px;
   box-shadow: 0px 5px 5px #999999;
-  background: #1D4877 url('../images/bg-header-nav.png') top left repeat-x;
+  background: #002D62 url('../images/bg-header-nav.png') top left repeat-x;
   height: 60px;
   /* Change width because of how the grid handles margins */
   width: 940px;
@@ -68,7 +69,7 @@ a:hover {
 
 .site-name-slogan,
 .site-name-slogan a {
-  color: #1D4877;
+  color: #002D62;
   width: 230px;
   display: none;
 }
@@ -390,11 +391,11 @@ a:hover {
 }
 
 .region-sidebar-second .block a {
-  color: #94AF6F;
+  color: #6EB43F;
 }
 
 .region-sidebar-second .block h2.block-title {
-  background-color: #94AF6F;
+  background-color: #6EB43F;
   color: #FFFFFF;
   text-transform: uppercase;
   padding: 0 10px;
@@ -436,7 +437,7 @@ a:hover {
  * Main content
  */
 h1#page-title {
-  color: #1D4877;
+  color: #002D62;
   text-transform: uppercase;
   font-size: 2em;
   font-weight: bold;
@@ -478,16 +479,16 @@ h1#page-title {
 .region-sidebar-second .block.incil-accordian-open h2 {
   cursor: pointer;
   background-repeat: no-repeat;
-  background-position: top right;
+  background-position: 270px 5px;
 }
 
 .region-sidebar-second .block.incil-accordian-closed h2 {
-  background-image: url('../images/arrow-right.png');
+  background-image: url('../images/arrow-accordion-up.png');
   cursor: pointer;
 }
 
 .region-sidebar-second .block.incil-accordian-open h2 {
-  background-image: url('../images/arrow-down.png');
+  background-image: url('../images/arrow-accordion-down.png');
 }
 
 /**
@@ -535,7 +536,7 @@ div.tabs ul.tabs li {
 }
 
 .views-field-title a {
-  color: #1D4877;
+  color: #002D62;
   text-transform: uppercase;
   font-size: 1.3em;
   font-weight: bold;
@@ -564,6 +565,14 @@ div.tabs ul.tabs li {
 .views-field-view-node {
   text-align: right;
   text-transform: uppercase;
+}
+
+/**
+ * Views exceptions
+ */
+
+.block-innovation-topics-block .views-row {
+  border-bottom: none; 
 }
 
 /**
@@ -623,14 +632,14 @@ input[type="button"]:hover {
  * Nodes and fields
  */
 h2.node-title {
-  color: #1D4877;
+  color: #002D62;
   text-transform: uppercase;
   font-size: 1.3em;
   font-weight: bold;
 }
 
 h2.node-title a {
-  color: #1D4877;
+  color: #002D62;
 }
 
 .node .field-name-field-content-image {
@@ -705,9 +714,16 @@ ul.pager {
 .view .date-nav-wrapper ul li.date-prev a {
   background: none;
   font-weight: bold;
-  color: #597C2C;
+  color: #F57E29;
   font-size: 1.5em;
   padding-top: 0;
+}
+.region-sidebar-second .item-list ul.pager li.pager-previous a,
+.region-sidebar-second .item-list ul.pager li.pager-next a,
+.region-sidebar-second .view .date-nav-wrapper ul li.date-next a,
+.region-sidebar-second .view .date-nav-wrapper ul li.date-prev a {
+  color: #6EB43F;
+  margin-top: -10px;
 }
 .view .date-nav-wrapper ul li.date-next,
 .view .date-nav-wrapper ul li.date-prev {
@@ -724,6 +740,13 @@ ul.pager {
 /**
  * Calendar
  */
+.calendar-calendar td.empty {
+  color: #CCCCCC;
+}
+.calendar-calendar .month-view .full tr td.single-day.today,
+.calendar-calendar .month-view .full td.date-box.today {
+  border-color: #FCB034;
+}
 .region-content .view-id-event_calendar .date-nav-wrapper .date-heading h3 {
   background-color: #B3B8BD;
   color: #FFFFFF;
