@@ -59,12 +59,40 @@ function incil_taxonomy_permissions_menu_alter(&$items) {
 function incil_taxonomy_permissions_page_access_callback($taxonomy) {
   // For whatever reason, the title is not set correctly, and there
   // is no relevant breadcrumb
-  drupal_set_title(check_plain($taxonomy->description));
-  $breadcrumb = array();
-  $breadcrumb[] = l(t('Home'), '<front>');
-  $breadcrumb[] = l(t('List'), 'admin/structure/taxonomy/' . $taxonomy->machine_name . '/list');
-  drupal_set_breadcrumb($breadcrumb);
+  /*
+  */
   
   // Determine access
   return (user_access('administer terms in ' . $taxonomy->vid) || user_access('administer taxonomy'));
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function incil_taxonomy_permissions_form_alter(&$form, &$form_state, $form_id) {
+  if (in_array($form_id, array('taxonomy_overview_terms', 'taxonomy_form_term'))) {
+    // Given permissions, title and breadcrumbs are not
+    // set correctly.
+    
+    // Set title
+    if (isset($form['#vocabulary'])) {
+      drupal_set_title(check_plain($form['#vocabulary']->name));
+    }
+    if (isset($form['#term'])) {
+      if (!empty($form['#term']['name'])) {
+        drupal_set_title(t('Edit term'));
+      }
+      else {
+        drupal_set_title(t('Add term'));
+      }
+    }
+    
+    // Set breadcrumb
+    if (isset($form['#vocabulary'])) {
+      $breadcrumb = array();
+      $breadcrumb[] = l(t('Home'), '<front>');
+      $breadcrumb[] = l(t('List'), 'admin/structure/taxonomy/' . $form['#vocabulary']->machine_name . '/list');
+      drupal_set_breadcrumb($breadcrumb);
+    }
+  }
 }
