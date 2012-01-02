@@ -3,6 +3,13 @@
 /**
  * Colors
  *
+ * #F57E29 - Link orange
+ * #F15C22 - Link:hover orange
+ * #FCB034 - Widget header orange
+ * #6EB43F - Widget header green
+ *
+ * Old colors:
+ *
  * #1D4877 - Dark Blue
  * #1C7CB7 - Medium Blue
  * #699ACA - Light Blue
@@ -25,7 +32,12 @@ body  {
 a,
 a:link,
 a:visited {
-  color: #597C2C;
+  color: #F57E29;
+  text-decoration: none;
+}
+a:focus,
+a:hover {
+  color: #F15C22;
 }
 
 /**
@@ -42,8 +54,7 @@ a:visited {
 
 #region-branding {
   position: absolute;
-  margin-left: -10px;
-  padding: 10px 0;
+  padding: 3px 0;
 }
 
 #region-branding-second {
@@ -51,7 +62,6 @@ a:visited {
 }
 
 .branding-data {
-  background-color: white;
   padding: 10px 0;
   width: 380px;
 }
@@ -60,6 +70,10 @@ a:visited {
 .site-name-slogan a {
   color: #1D4877;
   width: 230px;
+  display: none;
+}
+.old-logo .site-name-slogan a {
+  display: block;
 }
 
 .site-slogan {
@@ -584,7 +598,10 @@ div.tabs ul.tabs li {
 button, 
 input[type="reset"], 
 input[type="submit"], 
-input[type="button"] {
+input[type="button"]
+input[type="reset"]:hover, 
+input[type="submit"]:hover, 
+input[type="button"]:hover {
   -webkit-appearance: none;
   -moz-border-radius: 0;
   -webkit-border-radius: 0;
