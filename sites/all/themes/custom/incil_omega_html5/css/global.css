@@ -413,6 +413,10 @@ a:hover {
   padding-left: 1em;
 }
 
+.region-sidebar-second ul.menu {
+  margin-left: 10px;
+}
+
 /**
  * Twitter block
  */
