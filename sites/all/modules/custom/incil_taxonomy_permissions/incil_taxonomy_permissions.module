@@ -1,0 +1,70 @@
+<?php
+/**
+ * @file
+ * Main module file for INCIL Taxonomy Permissions.
+ *
+ * This module provides more reasonable taxonomy 
+ * permissions.  The default way of permissions for 
+ * the Taxonomy module is limited to editing and deleting, 
+ * not adding and rearranging.
+ */
+
+/**
+ * Impelements hook_help().
+ */
+function incil_taxonomy_permissions_help($path, $arg) {
+  $output = '';
+
+  if ($path == 'admin/help#incil_hole_puncher') {
+    $output .= '<p>' . t('This module provides more reasonable taxonomy permissions.  The default way of permissions for the Taxonomy module is limited to editing and deleting, not adding and rearranging.')  . '</p>';
+  }
+  
+  return $output;
+}
+
+/**
+ * Implements hook_permission().
+ */
+function incil_taxonomy_permissions_permission() {
+  $permissions = array();
+  foreach (taxonomy_get_vocabularies() as $vocabulary) {
+    $permissions += array(
+      'administer terms in ' . $vocabulary->vid => array(
+        'title' => t('Fully administer terms in %vocabulary', array('%vocabulary' => $vocabulary->name)),
+      ),
+    );
+  }
+  return $permissions;
+}
+
+/**
+ * Implements hook_menu_alter().
+ */
+function incil_taxonomy_permissions_menu_alter(&$items) {
+  // List page
+  $items['admin/structure/taxonomy/%taxonomy_vocabulary_machine_name']
+    ['access callback'] = 'incil_taxonomy_permissions_page_access_callback';
+  $items['admin/structure/taxonomy/%taxonomy_vocabulary_machine_name']
+    ['access arguments'] = array(3);
+  // Add page
+  $items['admin/structure/taxonomy/%taxonomy_vocabulary_machine_name/add']
+    ['access callback'] = 'incil_taxonomy_permissions_page_access_callback';
+  $items['admin/structure/taxonomy/%taxonomy_vocabulary_machine_name/add']
+    ['access arguments'] = array(3);
+}
+
+/**
+ * Access callback
+ */
+function incil_taxonomy_permissions_page_access_callback($taxonomy) {
+  // For whatever reason, the title is not set correctly, and there
+  // is no relevant breadcrumb
+  drupal_set_title(check_plain($taxonomy->description));
+  $breadcrumb = array();
+  $breadcrumb[] = l(t('Home'), '<front>');
+  $breadcrumb[] = l(t('List'), 'admin/structure/taxonomy/' . $taxonomy->machine_name . '/list');
+  drupal_set_breadcrumb($breadcrumb);
+  
+  // Determine access
+  return (user_access('administer terms in ' . $taxonomy->vid) || user_access('administer taxonomy'));
+}
