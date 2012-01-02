@@ -5,7 +5,7 @@
  */
 
 /**
- * Implements hook_theme_registry_alter.
+ * Implements hook_theme_registry_alter().
  */
 function incil_admin_theme_registry_alter(&$theme_registry) {
   // The two column approach is kind of cool, but
@@ -26,4 +26,14 @@ function incil_admin_filter_guidelines($variables) {
   $output .= theme('filter_tips', array('tips' => _filter_tips($format->format, FALSE)));
   $output .= '</div>';
   return $output;
+}
+
+/**
+ * Implements hook_preprocess_page().
+ */
+function incil_admin_preprocess_page(&$vars) {
+  // For whatever reason, the Rubi theme doesn't want to share
+  // this secret with its subthemes so we have to manually call
+  // it.
+  _rubik_local_tasks($vars);
 }
