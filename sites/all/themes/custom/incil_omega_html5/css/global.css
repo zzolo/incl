@@ -29,7 +29,7 @@
 h1, h2, h3, h4, h5, h6,
 body  {
   color: #222222;
-  font-family: Signika, Verdana, Helvetica, Arial, sans-serif;
+  font-family: "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
 }
 
 a,
@@ -588,6 +588,10 @@ div.tabs ul.tabs li {
   text-align: right;
   text-transform: uppercase;
 }
+.views-field-field-full-name {
+  text-transform: uppercase;
+  font-weight: bold;
+}
 
 /**
  * Views exceptions
@@ -825,6 +829,13 @@ ul.pager {
 .field-name-field-expertise .field-item {
   padding: 0 10px 10px 0;
   display: inline;
+}
+.profile .field {
+  margin-bottom: 1em;
+}
+.field-name-field-full-name {
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
 /**
