@@ -7,6 +7,9 @@
  * permissions.  The default way of permissions for 
  * the Taxonomy module is limited to editing and deleting, 
  * not adding and rearranging.
+ *
+ * THIS MODULE BREAKS LIVE SITE FOR SOME REASONS.
+ * Gives a MySQL server gone away error.
  */
 
 /**

@@ -1,4 +1,4 @@
-name = INCIL Taxonomy Permissions
-description = "This module provides more reasonable taxonomy permissions.  The default way of permissions for the Taxonomy module is limited to editing and deleting, not adding and rearranging."
+name = INCIL Taxonomy Permissions (DO NOT USE)
+description = "(BREAKS LIVE SITE) This module provides more reasonable taxonomy permissions.  The default way of permissions for the Taxonomy module is limited to editing and deleting, not adding and rearranging."
 core = 7.x
 package = "INCIL Custom"
