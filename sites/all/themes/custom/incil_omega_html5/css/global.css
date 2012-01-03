@@ -543,7 +543,7 @@ div.tabs ul.tabs li {
  * View Filters
  */
 .view-filters {
-  background-color: #B3B8BD;
+  background-color: #EEEEEE;
   padding: 10px;
   margin-bottom: 20px;
 }
@@ -674,6 +674,10 @@ div.node {
   margin-bottom: 20px;
 }
 
+.page-node .node .field {
+  margin-bottom: 1em;
+}
+
 /* hide for now (not good way to do this) */
 ul li.statistics_counter {
   display: none;
@@ -684,6 +688,11 @@ ul li.statistics_counter {
 
 .node-links {
   margin-top: 20px;
+}
+
+.field-name-field-images .field-item {
+  float: left;
+  margin: 0 10px 10px 0;
 }
 
 /**
