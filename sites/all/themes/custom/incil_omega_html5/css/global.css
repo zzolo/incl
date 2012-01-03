@@ -8,6 +8,7 @@
  * #FCB034 - Widget header orange
  * #6EB43F - Widget header green
  * #002D62 - Dark blue page title
+ * #646464 - Drak grey rgb(100, 100, 100)
  *
  * Old colors:
  *
@@ -154,7 +155,9 @@ a:hover {
 .region-header-second .block-nice-menus ul.nice-menu li ul {
   margin-top: 5px;
   padding: 10px 0;
-  background-color: #699ACA;
+  background-color: #646464;
+  background-color: rgb(100, 100, 100);
+  background-color: rgba(100, 100, 100, 0.9);
   border: none;
   box-shadow: 0px 5px 5px #999999;
 }
