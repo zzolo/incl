@@ -9,6 +9,7 @@
  * #6EB43F - Widget header green
  * #002D62 - Dark blue page title
  * #646464 - Drak grey rgb(100, 100, 100)
+ * #EEEEEE - Light, light grey.
  *
  * Old colors:
  *
@@ -430,6 +431,10 @@ a:hover {
   margin-left: 10px;
 }
 
+.region-sidebar-second .block .views-field-title a {
+  font-size: 1em;
+}
+
 /**
  * Twitter block
  */
@@ -791,6 +796,9 @@ ul.pager {
   float: left;
   margin: 0 10px 10px 0;
 }
+.field-name-field-profile-image .field-label {
+  display: none;
+}
 .field-name-field-bio {
   clear: left;
 }
@@ -808,4 +816,65 @@ ul.pager {
 .field-name-field-expertise .field-item {
   padding: 0 10px 10px 0;
   display: inline;
+}
+
+/**
+ * Comments
+ */
+.comment-form {
+  background-color: #EEEEEE;
+  padding: 10px;
+}
+
+.comment-preview,
+.comment-form .node {
+  background-color: #FFFFFF;
+  padding: 10px;
+}
+
+#comments h2.title {
+  background-color: #FCB034;
+  color: white;
+  text-transform: uppercase;
+  padding: 0 10px;
+  font-size: 1.3em;
+  line-height: 1.6em;
+}
+
+#comments .field-name-field-profile-image .field-label {
+  display: none;
+}
+
+#comments .field-name-field-profile-image {
+  margin: 0 10px 5px 0;
+}
+
+#comments .new {
+  display: none;
+}
+
+
+#comments header h3 {
+  line-height: 1.2em;
+  margin: 0;
+  padding: 0;
+}
+
+#comments footer {
+  color: #B3B8BD;
+}
+
+.comment-links ul li {
+  float: right;
+  padding: 0;
+}
+
+#comments article {
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px dotted #B3B8BD; 
+}
+
+#comments .indented {
+  margin: 0;
 }
