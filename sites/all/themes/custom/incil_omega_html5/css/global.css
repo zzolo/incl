@@ -343,12 +343,22 @@ a:hover {
   font-weight: bold;
 }
 
+#views_slideshow_cycle_main_front_slider-block .views-field-body .slider-inline-body {
+  overflow: hidden;
+  height: 115px;
+}
+
 #views_slideshow_cycle_main_front_slider-block .views-row {
   width: 915px;
 }
 
 .block-front-slider-block .content {
   margin-bottom: 20px;
+}
+
+#views_slideshow_cycle_main_front_slider-block .views-row {
+  border: none;
+  margin: 0;
 }
 
 /**
