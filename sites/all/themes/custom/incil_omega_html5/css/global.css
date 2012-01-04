@@ -463,6 +463,12 @@ h1#page-title {
   text-transform: uppercase;
   font-size: 2em;
   font-weight: bold;
+  margin-bottom: 0;
+}
+
+.region-content .tabs.primary {
+  margin-top: 2em;
+  margin-bottom: 2em;
 }
 
 /**
@@ -704,9 +710,6 @@ div.node {
 ul li.statistics_counter {
   display: none;
 }
-.submitted {
-  color: #B3B8BD;
-}
 
 .node-links {
   margin-top: 20px;
@@ -716,6 +719,16 @@ ul li.statistics_counter {
   float: left;
   margin: 0 10px 10px 0;
 }
+
+.submitted,
+.title-submitted {
+  color: #B3B8BD;
+}
+/* Since we put the submitted with the page */
+.page-node .submitted {
+  display: none;
+}
+
 
 /**
  * Node teasers
