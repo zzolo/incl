@@ -10,3 +10,48 @@
  * for your subtheme grows. Please read the README.txt in the /preprocess and /process subfolders
  * for more information on this topic.
  */
+
+/**
+ * Implements hook_preprocess_views_view_unformatted().
+ */
+/*
+function incil_omega_html5_preprocess_views_view_unformatted($vars) {
+  $view = $vars['view'];
+
+  // We want to add node type classes
+  if (isset($vars['rows'])) {
+    if (isset($vars['classes_array']) && isset($view->result)) {
+      // Go through result
+      foreach ($view->result as $id => $result) {
+        if (isset($view->result[$id]->node_type)) {
+          $type = $view->result[$id]->node_type;
+          // Set both to be sure
+          $vars['classes_array'][$id] .= ' node-type-' . $type;
+          $vars['classes'][$id][] = 'node-type-' . $type;
+        }
+      }
+    }
+  }
+}
+*/
+
+/**
+ * For whatever reason, utilizing the hook_preprocess_views_view_unformatted()
+ * function to set some classes does not transfer over to the 
+ * views_view_unformatted.tpl.php template.  See above.
+ *
+ * So, this is a function that cna be used in the template itself.
+ */
+function incil_omega_html5_preprocess_views_type_class($view, &$classes_array) {
+  if (isset($view) && is_object($view)) {
+    if (isset($classes_array) && isset($view->result)) {
+      // Go through result
+      foreach ($view->result as $id => $result) {
+        if (isset($view->result[$id]->node_type)) {
+          $type = $view->result[$id]->node_type;
+          $classes_array[$id] .= ' node-type-' . check_plain($type);
+        }
+      }
+    }
+  }
+}

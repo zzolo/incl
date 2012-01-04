@@ -5,6 +5,9 @@
  *
  * @ingroup views_templates
  */
+
+// Add classes to row array
+incil_omega_html5_preprocess_views_type_class($view, $classes_array);
 ?>
 <?php if (!empty($title)): ?>
   <h3><?php print $title; ?></h3>

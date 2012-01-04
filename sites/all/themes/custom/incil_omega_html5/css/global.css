@@ -547,6 +547,9 @@ div.tabs ul.tabs li {
   padding: 10px;
   margin-bottom: 20px;
 }
+#edit-country-title {
+  width: 165px;
+}
 
 /**
  * Common views fields
@@ -592,13 +595,28 @@ div.tabs ul.tabs li {
   text-transform: uppercase;
   font-weight: bold;
 }
+.views-field-field-innovation-topic {
+  float: right;
+  text-transform: uppercase;
+}
+/* We use this field just for icons/visual indication */
+.views-field-type {
+  display: none;
+}
+.views-label {
+  font-weight: bold;
+  display: inline;
+}
 
 /**
  * Views exceptions
  */
-
 .block-innovation-topics-block .views-row {
   border-bottom: none; 
+}
+
+.view-search-blog-posts .views-field-field-country .field-content {
+  display: inline;
 }
 
 /**
@@ -897,4 +915,24 @@ ul.pager {
 
 #comments .indented {
   margin: 0;
+}
+
+/**
+ * Content/node/profile types for icons
+ */
+.node-type-tool .views-field-title {
+  border-right: 3px solid blue;
+  padding-right: 10px;
+}
+.node-type-project .views-field-title {
+  border-right: 3px solid lightblue;
+  padding-right: 10px;
+}
+.node-type-country .views-field-title {
+  border-right: 3px solid red;
+  padding-right: 10px;
+}
+.node-type-blog_post .views-field-title {
+  border-right: 3px solid cyan;
+  padding-right: 10px;
 }
