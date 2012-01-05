@@ -268,11 +268,6 @@ a:hover {
   color: #FFFFFF;
 }
 
-#section-footer {
-  margin-top: 10px;
-  padding-top: 10px;
-}
-
 /**
  * Footer menu
  */
@@ -302,6 +297,23 @@ a:hover {
  */
 .boxes-box-controls {
   display: none;
+}
+
+/**
+ * Front page
+ *
+ * Hide the node stuff for non-administrators.
+ * This isn't a security thing.
+ */
+.front h1#page-title, 
+.front .region-content .tabs,
+.front .region-content .block-system-main {
+  display: none;
+}
+.front.user-role-administrator h1#page-title, 
+.front.user-role-administrator .region-content .tabs,
+.front.user-role-administrator .region-content .block-system-main {
+  display: block;
 }
 
 /**
@@ -403,6 +415,16 @@ a:hover {
   /* light 86c3a0 */
 }
 
+.block-menu-front-page h2.block-title {
+  display: none;
+}
+.block-menu-front-page .content ul,
+.block-menu-front-page .content ul li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
 /**
  * Region Second blocks
  */
@@ -439,6 +461,24 @@ a:hover {
 
 .region-sidebar-second .block .views-field-title a {
   font-size: 1em;
+}
+a#front-page-menu-item-explore,
+a#front-page-menu-item-implement,
+a#front-page-menu-item-interact {
+  width: 620px;
+  height: 250px;
+  color: transparent;
+  display: block;
+  margin-bottom: 15px;
+}
+a#front-page-menu-item-explore {
+  background: transparent url('../images/button-explore.png') top left no-repeat;
+}
+a#front-page-menu-item-implement {
+  background: transparent url('../images/button-implement.png') top left no-repeat;
+}
+a#front-page-menu-item-interact {
+  background: transparent url('../images/button-interact.png') top left no-repeat;
 }
 
 /**
