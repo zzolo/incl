@@ -933,19 +933,62 @@ ul.pager {
 /**
  * Content/node/profile types for icons
  */
+/* Tool */
+.node-type-tool.views-row {
+  background: transparent url('../images/content-icons/sm_shovel.png') top right no-repeat;
+}
 .node-type-tool .views-field-title {
-  border-right: 3px solid blue;
-  padding-right: 10px;
+  padding-right: 40px;
+}
+.node-type-tool h1#page-title {
+  background: transparent url('../images/content-icons/sm_shovel.png') center right no-repeat;
+  padding-right: 40px;
+}
+
+/* Project */
+.node-type-project.views-row {
+  background: transparent url('../images/content-icons/sm_toolbox.png') top right no-repeat;
 }
 .node-type-project .views-field-title {
-  border-right: 3px solid lightblue;
-  padding-right: 10px;
+  padding-right: 40px;
+}
+.node-type-project h1#page-title {
+  background: transparent url('../images/content-icons/sm_toolbox.png') center right no-repeat;
+  padding-right: 40px;
+}
+
+/* Country */
+.node-type-country.views-row {
+  background: transparent url('../images/content-icons/sm_globe.png') top right no-repeat;
 }
 .node-type-country .views-field-title {
-  border-right: 3px solid red;
-  padding-right: 10px;
+  padding-right: 40px;
+}
+.node-type-country h1#page-title {
+  background: transparent url('../images/content-icons/sm_globe.png') center right no-repeat;
+  padding-right: 40px;
+}
+
+/* Blog */
+.node-type-blog_post.views-row {
+  background: transparent url('../images/content-icons/sm_bubbles.png') top right no-repeat;
 }
 .node-type-blog_post .views-field-title {
-  border-right: 3px solid cyan;
-  padding-right: 10px;
+  padding-right: 40px;
+}
+.node-type-blog-post h1#page-title {
+  background: transparent url('../images/content-icons/sm_bubbles.png') center right no-repeat;
+  padding-right: 40px;
+}
+
+/* Event */
+.node-type-event.views-row {
+  background: transparent url('../images/content-icons/sm_check.png') top right no-repeat;
+}
+.node-type-event .views-field-title {
+  padding-right: 40px;
+}
+.node-type-event h1#page-title {
+  background: transparent url('../images/content-icons/sm_check.png') center right no-repeat;
+  padding-right: 40px;
 }
