@@ -199,7 +199,7 @@ a:hover {
   border: none;
   float: right;
   background-image: url('../images/search.png');
-  text-indent: 9999999px;
+  color: transparent;
 }
 
 /**
