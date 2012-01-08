@@ -1097,7 +1097,8 @@ ul.pager {
   background: transparent url('../images/content-icons/sm_person.png') top right no-repeat;
 }
 .view-front-slider .field-content.profile-type-profile .slider-inline-title,
-.profile-type-profile .views-field-title {
+.profile-type-profile .views-field-title,
+.profile-type-profile .views-field-field-full-name {
   padding-right: 40px;
   min-height: 2.5em;
 }

@@ -56,11 +56,18 @@ function incil_omega_html5_preprocess_views_type_class($view, &$classes_array) {
           $classes_array[$id] .= ' profile-type-' . check_plain($type);
         }
         else {
-          // Check for a similar property
+          // Check for a similar node property
           foreach ($view->result[$id] as $p => $value) {
             if (strpos($p, '_node_type') > 0) {
               $type = $view->result[$id]->{$p};
               $classes_array[$id] .= ' node-type-' . check_plain($type);
+            }
+          }
+          // Check for a similar profile property
+          foreach ($view->result[$id] as $p => $value) {
+            if (strpos($p, '_profile_type') > 0 || strpos($p, '_users_type') > 0) {
+              $type = $view->result[$id]->{$p};
+              $classes_array[$id] .= ' profile-type-' . check_plain($type);
             }
           }
         }
