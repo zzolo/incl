@@ -43,7 +43,6 @@ function incil_omega_html5_preprocess_views_view_unformatted($vars) {
  * So, this is a function that cna be used in the template itself.
  */
 function incil_omega_html5_preprocess_views_type_class($view, &$classes_array) {
-dpm($view);
   if (isset($view) && is_object($view)) {
     if (isset($classes_array) && isset($view->result)) {
       // Go through result
