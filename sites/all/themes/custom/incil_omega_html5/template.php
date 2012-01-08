@@ -51,6 +51,19 @@ function incil_omega_html5_preprocess_views_type_class($view, &$classes_array) {
           $type = $view->result[$id]->node_type;
           $classes_array[$id] .= ' node-type-' . check_plain($type);
         }
+        elseif (isset($view->result[$id]->profile_type)) {
+          $type = $view->result[$id]->profile_type;
+          $classes_array[$id] .= ' profile-type-' . check_plain($type);
+        }
+        else {
+          // Check for a similar property
+          foreach ($view->result[$id] as $p => $value) {
+            if (strpos($p, '_node_type') > 0) {
+              $type = $view->result[$id]->{$p};
+              $classes_array[$id] .= ' node-type-' . check_plain($type);
+            }
+          }
+        }
       }
     }
   }

@@ -481,6 +481,11 @@ a#front-page-menu-item-interact {
   background: transparent url('../images/button-interact.png') top left no-repeat;
 }
 
+.region-sidebar-second .openlayers-views-map {
+  margin-right: -10px;
+  margin-left: -10px;
+}
+
 /**
  * Twitter block
  */
@@ -981,6 +986,20 @@ ul.pager {
 }
 
 /**
+ * Tope region
+ */
+.region-top h2.block-title {
+  color: #002D62;
+  text-transform: uppercase;
+  font-size: 2em;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.region-top {
+  margin-bottom: 15px;
+}
+
+/**
  * Content/node/profile types for icons
  */
 /* Tool */
@@ -991,6 +1010,7 @@ ul.pager {
 .view-front-slider .field-content.node-type-tool .slider-inline-title,
 .node-type-tool .views-field-title {
   padding-right: 40px;
+  min-height: 2.5em;
 }
 .node-type-tool h1#page-title {
   background: transparent url('../images/content-icons/sm_shovel.png') center right no-repeat;
@@ -1005,6 +1025,7 @@ ul.pager {
 .view-front-slider .field-content.node-type-project .slider-inline-title,
 .node-type-project .views-field-title {
   padding-right: 40px;
+  min-height: 2.5em;
 }
 .node-type-project h1#page-title {
   background: transparent url('../images/content-icons/sm_toolbox.png') center right no-repeat;
@@ -1017,8 +1038,10 @@ ul.pager {
 }
 .node-type-country .views-field-title {
   padding-right: 40px;
+  min-height: 2.5em;
 }
-.node-type-country h1#page-title {
+.node-type-country h1#page-title,
+.region-top h2.block-title {
   background: transparent url('../images/content-icons/sm_globe.png') center right no-repeat;
   padding-right: 40px;
 }
@@ -1031,6 +1054,7 @@ ul.pager {
 .view-front-slider .field-content.node-type-blog_post .slider-inline-title,
 .node-type-blog_post .views-field-title {
   padding-right: 40px;
+  min-height: 2.5em;
 }
 .node-type-blog-post h1#page-title {
   background: transparent url('../images/content-icons/sm_bubbles.png') center right no-repeat;
@@ -1045,6 +1069,7 @@ ul.pager {
 .view-front-slider .field-content.node-type-event .slider-inline-title,
 .node-type-event .views-field-title {
   padding-right: 40px;
+  min-height: 2.5em;
 }
 .node-type-event h1#page-title {
   background: transparent url('../images/content-icons/sm_check.png') center right no-repeat;
@@ -1059,8 +1084,31 @@ ul.pager {
 .view-front-slider .field-content.node-type-pilot .slider-inline-title,
 .node-type-pilot .views-field-title {
   padding-right: 40px;
+  min-height: 2.5em;
 }
 .node-type-pilot h1#page-title {
   background: transparent url('../images/content-icons/sm_pen.png') center right no-repeat;
   padding-right: 40px;
+}
+
+/* Profile */
+.view-front-slider .field-content.profile-type-profile,
+.profile-type-profile.views-row {
+  background: transparent url('../images/content-icons/sm_person.png') top right no-repeat;
+}
+.view-front-slider .field-content.profile-type-profile .slider-inline-title,
+.profile-type-profile .views-field-title {
+  padding-right: 40px;
+  min-height: 2.5em;
+}
+.profile-type-profile h1#page-title {
+  background: transparent url('../images/content-icons/sm_person.png') center right no-repeat;
+  padding-right: 40px;
+}
+
+/**
+ * Countries page
+ */
+.page-node-100 h1#page-title {
+  display: none;
 }
