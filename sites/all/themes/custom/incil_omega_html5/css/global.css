@@ -776,6 +776,9 @@ ul li.statistics_counter {
   display: none;
 }
 
+.field-name-field-geometry {
+  clear: left;
+}
 
 /**
  * Node teasers
