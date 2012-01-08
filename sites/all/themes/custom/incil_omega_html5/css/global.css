@@ -1004,13 +1004,17 @@ ul.pager {
  */
 /* Tool */
 .view-front-slider .field-content.node-type-tool,
-.node-type-tool.views-row {
+.node-type-tool.views-row,
+.node-tool.node-teaser {
   background: transparent url('../images/content-icons/sm_shovel.png') top right no-repeat;
 }
 .view-front-slider .field-content.node-type-tool .slider-inline-title,
 .node-type-tool .views-field-title {
   padding-right: 40px;
   min-height: 2.5em;
+}
+.node-tool.node-teaser h2.node-title {
+  padding-right: 40px;
 }
 .node-type-tool h1#page-title {
   background: transparent url('../images/content-icons/sm_shovel.png') center right no-repeat;
@@ -1048,13 +1052,17 @@ ul.pager {
 
 /* Blog */
 .view-front-slider .field-content.node-type-blog_post,
-.node-type-blog_post.views-row {
+.node-type-blog_post.views-row,
+.node-blog-post.node-teaser {
   background: transparent url('../images/content-icons/sm_bubbles.png') top right no-repeat;
 }
 .view-front-slider .field-content.node-type-blog_post .slider-inline-title,
 .node-type-blog_post .views-field-title {
   padding-right: 40px;
   min-height: 2.5em;
+}
+.node-blog-post.node-teaser h2.node-title {
+  padding-right: 40px;
 }
 .node-type-blog-post h1#page-title {
   background: transparent url('../images/content-icons/sm_bubbles.png') center right no-repeat;
