@@ -1102,7 +1102,8 @@ ul.pager {
   padding-right: 40px;
   min-height: 2.5em;
 }
-.profile-type-profile h1#page-title {
+.profile-type-profile h1#page-title,
+.page-user h1#page-title {
   background: transparent url('../images/content-icons/sm_person.png') center right no-repeat;
   padding-right: 40px;
 }
