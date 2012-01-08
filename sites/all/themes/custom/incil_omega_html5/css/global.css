@@ -647,7 +647,8 @@ div.tabs ul.tabs li {
   text-transform: uppercase;
   font-weight: bold;
 }
-.views-field-field-innovation-topic {
+.views-field-field-innovation-topic,
+.views-field-field-tool-category {
   float: right;
   text-transform: uppercase;
 }
@@ -667,7 +668,7 @@ div.tabs ul.tabs li {
   border-bottom: none; 
 }
 
-.view-search-blog-posts .views-field-field-country .field-content {
+.views-field-field-country .field-content {
   display: inline;
 }
 
@@ -980,9 +981,11 @@ ul.pager {
  * Content/node/profile types for icons
  */
 /* Tool */
+.view-front-slider .field-content.node-type-tool,
 .node-type-tool.views-row {
   background: transparent url('../images/content-icons/sm_shovel.png') top right no-repeat;
 }
+.view-front-slider .field-content.node-type-tool .slider-inline-title,
 .node-type-tool .views-field-title {
   padding-right: 40px;
 }
@@ -992,9 +995,11 @@ ul.pager {
 }
 
 /* Project */
+.view-front-slider .field-content.node-type-project,
 .node-type-project.views-row {
   background: transparent url('../images/content-icons/sm_toolbox.png') top right no-repeat;
 }
+.view-front-slider .field-content.node-type-project .slider-inline-title,
 .node-type-project .views-field-title {
   padding-right: 40px;
 }
@@ -1016,9 +1021,11 @@ ul.pager {
 }
 
 /* Blog */
+.view-front-slider .field-content.node-type-blog_post,
 .node-type-blog_post.views-row {
   background: transparent url('../images/content-icons/sm_bubbles.png') top right no-repeat;
 }
+.view-front-slider .field-content.node-type-blog_post .slider-inline-title,
 .node-type-blog_post .views-field-title {
   padding-right: 40px;
 }
@@ -1028,13 +1035,29 @@ ul.pager {
 }
 
 /* Event */
+.view-front-slider .field-content.node-type-event,
 .node-type-event.views-row {
   background: transparent url('../images/content-icons/sm_check.png') top right no-repeat;
 }
+.view-front-slider .field-content.node-type-event .slider-inline-title,
 .node-type-event .views-field-title {
   padding-right: 40px;
 }
 .node-type-event h1#page-title {
   background: transparent url('../images/content-icons/sm_check.png') center right no-repeat;
+  padding-right: 40px;
+}
+
+/* Pilot */
+.view-front-slider .field-content.node-type-pilot,
+.node-type-pilot.views-row {
+  background: transparent url('../images/content-icons/sm_pen.png') top right no-repeat;
+}
+.view-front-slider .field-content.node-type-pilot .slider-inline-title,
+.node-type-pilot .views-field-title {
+  padding-right: 40px;
+}
+.node-type-pilot h1#page-title {
+  background: transparent url('../images/content-icons/sm_pen.png') center right no-repeat;
   padding-right: 40px;
 }
