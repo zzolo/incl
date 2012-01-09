@@ -535,6 +535,7 @@ h1#page-title {
 .region-sidebar-second .block-menu-innovation-advisor div.content,
 .region-sidebar-second .block-menu-user-content-menu div.content {
   background-color: #B3B8BD;
+  padding-bottom: 10px;
 }
 
 .region-sidebar-second .block-menu-administration a,
