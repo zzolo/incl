@@ -604,8 +604,8 @@ div.tabs ul.tabs li {
   padding: 10px;
   margin-bottom: 20px;
 }
-#edit-country-title {
-  width: 165px;
+.view-filters input.form-text {
+  max-width: 150px;
 }
 
 /**
@@ -758,7 +758,7 @@ h2.node-title a {
 
 article.node,
 div.node {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .page-node .node .field {
@@ -1128,4 +1128,20 @@ ul.pager {
  */
 .page-node-100 h1#page-title {
   display: none;
+}
+
+/**
+ * Experts view
+ */
+.views-field-user-1 {
+  text-transform: uppercase;
+  float: right;
+}
+.views-field-field-country-expertise,
+.views-field-field-expertise {
+  margin-left: 110px;
+}
+.views-field-field-country-expertise .field-content,
+.views-field-field-expertise .field-content {
+  display: inline;
 }
