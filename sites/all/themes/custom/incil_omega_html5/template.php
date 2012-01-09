@@ -47,32 +47,32 @@ function incil_omega_html5_preprocess_views_type_class($view, &$classes_array) {
     if (isset($classes_array) && isset($view->result)) {
       // Go through result
       foreach ($view->result as $id => $result) {
-        if (isset($view->result[$id]->node_type)) {
-          $type = $view->result[$id]->node_type;
-          $classes_array[$id] .= ' node-type-' . check_plain($type);
-        }
-        if (isset($view->result[$id]->node_users_type)) {
-          $type = $view->result[$id]->node_users_type;
-          $classes_array[$id] .= ' node-type-' . check_plain($type);
-        }
-        elseif (isset($view->result[$id]->profile_type)) {
-          $type = $view->result[$id]->profile_type;
-          $classes_array[$id] .= ' profile-type-' . check_plain($type);
-        }
-        else {
-          // Check for a similar node property
-          foreach ($view->result[$id] as $p => $value) {
-            if (strpos($p, '_node_type') > 0) {
-              $type = $view->result[$id]->{$p};
-              $classes_array[$id] .= ' node-type-' . check_plain($type);
-            }
+      
+        // Check node types
+        $node_types = array(
+          'node_type',
+          'node_field_data_field_country_type',
+          'node_field_data_field_countries_type',
+          'node_field_data_field_tools_type',
+          'node_field_data_field_projects_type',
+          'node_users_type',
+        );
+        foreach ($view->result[$id] as $p => $value) {
+          if (in_array($p, $node_types) || strpos($p, '_node_type') > 0) {
+            $type = $view->result[$id]->{$p};
+            $classes_array[$id] .= ' node-type-' . check_plain($type);
           }
-          // Check for a similar profile property
-          foreach ($view->result[$id] as $p => $value) {
-            if (strpos($p, '_profile_type') > 0 || strpos($p, '_users_type') > 0) {
-              $type = $view->result[$id]->{$p};
-              $classes_array[$id] .= ' profile-type-' . check_plain($type);
-            }
+        }
+        
+        // Check for profile types
+        $profile_types = array(
+          'profile_type',
+        );
+        foreach ($view->result[$id] as $p => $value) {
+          if (in_array($p, $profile_types) || strpos($p, '_profile_type') > 0 || 
+            strpos($p, '_users_type') > 0) {
+            $type = $view->result[$id]->{$p};
+            $classes_array[$id] .= ' profile-type-' . check_plain($type);
           }
         }
       }
