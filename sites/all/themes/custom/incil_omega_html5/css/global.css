@@ -447,7 +447,7 @@ a:hover {
 
 .region-sidebar-second .block .content {
   background-color: #FFFFFF;
-  padding: 10px;
+  padding: 10px 10px 0 10px;
 }
 
 .region-sidebar-second ul li.leaf {
@@ -675,6 +675,14 @@ div.tabs ul.tabs li {
 
 .views-field-field-country .field-content {
   display: inline;
+}
+
+.region-sidebar-second .views-row.views-row-last {
+  margin-bottom: 0;
+}
+
+.view-author-block .views-field-uid {
+  text-transform: uppercase;
 }
 
 /**
