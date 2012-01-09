@@ -678,6 +678,13 @@ div.tabs ul.tabs li {
 }
 
 /**
+ * Country list
+ */
+.view-country-list td {
+  width: 50%;
+}
+
+/**
  * Blocks in content
  */
 .region-content .block h2.block-title {
