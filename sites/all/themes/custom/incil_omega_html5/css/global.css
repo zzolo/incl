@@ -686,6 +686,10 @@ div.tabs ul.tabs li {
   text-transform: uppercase;
 }
 
+.view-featured-user-block .views-field-body {
+  clear: left;
+}
+
 /**
  * Country list
  */
