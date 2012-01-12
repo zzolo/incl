@@ -465,11 +465,13 @@ a:hover {
 a#front-page-menu-item-explore,
 a#front-page-menu-item-implement,
 a#front-page-menu-item-interact {
-  width: 620px;
-  height: 250px;
-  color: transparent;
+  width: 580px;
+  height: 190px;
+  color: white;
   display: block;
+  font-size: 1.2em;
   margin-bottom: 15px;
+  padding: 60px 20px 0 20px;
 }
 a#front-page-menu-item-explore {
   background: transparent url('../images/button-explore.png') top left no-repeat;

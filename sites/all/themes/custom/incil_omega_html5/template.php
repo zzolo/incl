@@ -12,28 +12,32 @@
  */
 
 /**
- * Implements hook_preprocess_views_view_unformatted().
+ * Implements theme_menu_link().
  */
-/*
-function incil_omega_html5_preprocess_views_view_unformatted($vars) {
-  $view = $vars['view'];
-
-  // We want to add node type classes
-  if (isset($vars['rows'])) {
-    if (isset($vars['classes_array']) && isset($view->result)) {
-      // Go through result
-      foreach ($view->result as $id => $result) {
-        if (isset($view->result[$id]->node_type)) {
-          $type = $view->result[$id]->node_type;
-          // Set both to be sure
-          $vars['classes_array'][$id] .= ' node-type-' . $type;
-          $vars['classes'][$id][] = 'node-type-' . $type;
-        }
-      }
-    }
+function incil_omega_html5_menu_link__menu_front_page(array &$vars) {
+  // We alter the menu items here because the interface does not
+  // allow for all this text.
+  
+  switch ($vars['element']['#href']) {
+    case 'node/12':
+      // Explore
+      $vars['element']['#title'] = t('Come here to learn about innovative projects happening around the world, use the Center’s Media Map to find and download global data about media and development, and discover how research on experiments can enrich the design of your own programs.');
+      break;
+      
+    case 'node/98':
+      // Implement
+      $vars['element']['#title'] = t('Want to avoid reinventing the wheel? In this section, you can access our catalogue of tools and see how others are using them to implement projects. Get inspired to integrate new technologies into your work and think outside the box. Here you can also find information on the pilots the Center is conducting and link to our Innovation Advisors’ blogs for an inside perspective on getting them up and running.');
+      break;
+      
+    case 'node/4':
+      // Interact
+      $vars['element']['#title'] = t('The Internews Center for Innovation and Learning is dedicated to promoting a culture of learning and a spirit of curiosity and exploration across the organization. Join the interactive discussion about ongoing experiments through our Innovation Advisors’ regional blogs, our pilot research blog, and the DC Headquarters blog. Use our expert database to connect with tool and project specialists and stay in the loop about upcoming events and conferences with our innovation calendar.');
+      break;
   }
+  
+  // Handle the normal way
+  return theme_menu_link($vars);
 }
-*/
 
 /**
  * For whatever reason, utilizing the hook_preprocess_views_view_unformatted()
