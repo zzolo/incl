@@ -26,12 +26,12 @@ function incil_omega_html5_menu_link__menu_front_page(array &$vars) {
       
     case 'node/98':
       // Implement
-      $vars['element']['#title'] = t('Want to avoid reinventing the wheel? In this section, you can access our catalogue of tools and see how others are using them to implement projects. Get inspired to integrate new technologies into your work and think outside the box. Here you can also find information on the pilots the Center is conducting and link to our Innovation Advisors’ blogs for an inside perspective on getting them up and running.');
+      $vars['element']['#title'] = t('Want to avoid reinventing the wheel? In this section, you can access our catalogue of tools and see how others are using them to implement projects.  Get inspired to integrate new technologies into your work and think outside the box.');
       break;
       
     case 'node/4':
       // Interact
-      $vars['element']['#title'] = t('The Internews Center for Innovation and Learning is dedicated to promoting a culture of learning and a spirit of curiosity and exploration across the organization. Join the interactive discussion about ongoing experiments through our Innovation Advisors’ regional blogs, our pilot research blog, and the DC Headquarters blog. Use our expert database to connect with tool and project specialists and stay in the loop about upcoming events and conferences with our innovation calendar.');
+      $vars['element']['#title'] = t('Join interactive discussions about ongoing experiments, use our expert database to connect with tool and project specialists, and stay in the loop about upcoming events and conferences with our innovation calendar.');
       break;
   }
   
