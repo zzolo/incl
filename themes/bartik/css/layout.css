@@ -32,7 +32,7 @@ body,
   margin-top: 3em;
 }
 .without-secondary-menu .region-header {
-  margin-top: 15px;
+  margin: 15px 0 25px 0;;
 }
 #secondary-menu {
   position: absolute;

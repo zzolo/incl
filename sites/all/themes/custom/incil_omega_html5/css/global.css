@@ -108,6 +108,10 @@ a:hover {
 /**
  * Main nav menu
  */
+
+.region-header-second {
+	margin:15px 0 25px 0;
+}
 .region-header-second .block-menu h2.block-title,
 .region-header-second .block-nice-menus h2.block-title {
   display: none;
