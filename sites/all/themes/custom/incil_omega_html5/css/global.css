@@ -62,7 +62,7 @@ a:hover {
 
 #region-branding-second {
   float: right;
-  margin:15px 0 25px 0;
+  margin:15px 0 25px 0 !important;
 }
 
 .branding-data {
