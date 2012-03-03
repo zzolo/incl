@@ -47,7 +47,7 @@ a:hover {
  * Header
  */
 #zone-header {
-  margin-bottom: 30px;
+  margin:25px 0 30px 0;
   box-shadow: 0px 5px 5px #999999;
   background: #002D62 url('../images/bg-header-nav.png') top left repeat-x;
   height: 60px;
