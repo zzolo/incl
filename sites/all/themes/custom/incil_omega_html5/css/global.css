@@ -86,7 +86,7 @@ a:hover {
 
 #region-branding-second {
   height: 70px;
-  margin-top: 15px;
+  margin:15px 0 25px 0 !important;
 }
 
 /**
