@@ -56,13 +56,7 @@ a:hover {
 
 #region-branding {
   position: absolute;
-  padding: 3px 0;
-}
-
-#region-branding-second {
-  float: right;
-  margin:15px 0 0 0 !important;
-  padding-right:10px;
+  padding: 45px 0 0 0;
 }
 
 .branding-data {
@@ -83,9 +77,12 @@ a:hover {
 .site-slogan {
   font-size: 13px;
 }
+#zone-branding {
+  width:940px !important;
+}
 
 #region-branding-second {
-  height: 100px;
+  height: 70px;
   margin:0 !important;
   padding:50px 0 0 0;
   background: url(../images/headerBar.gif) no-repeat;
