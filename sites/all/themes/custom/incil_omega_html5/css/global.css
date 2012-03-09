@@ -56,7 +56,7 @@ a:hover {
 
 #region-branding {
   position: absolute;
-  padding: 45px 0 0 0;
+  padding: 35px 0 0 0;
   left: 50%;
   margin-left: -470px;
 }
@@ -84,7 +84,7 @@ a:hover {
 }
 
 #region-branding-second {
-  height: 70px;
+  height: 60px;
   margin:0 !important;
   padding:50px 0 0 0;
   background: url(../images/headerBar.gif) no-repeat;
