@@ -85,8 +85,12 @@ a:hover {
 }
 
 #region-branding-second {
-  height: 64px;
-  margin:15px 0 0 0 !important;
+  height: 100px;
+  margin:0 !important;
+  padding:50px 0 0 500px;
+  background: url(../images/headerBar.gif) no-repeat;
+  width:940px;
+  z-index:999;
 }
 
 /**
