@@ -87,7 +87,7 @@ a:hover {
 #region-branding-second {
   height: 100px;
   margin:0 !important;
-  padding:50px 0 0 500px;
+  padding:50px 0 0 0;
   background: url(../images/headerBar.gif) no-repeat;
   width:940px;
   z-index:999;
@@ -214,6 +214,7 @@ a:hover {
 .social-container {
   width: 150px;
   float: left;
+  margin-left:479px;
 }
 .social-container a {
   display: block;
