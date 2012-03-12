@@ -93,12 +93,17 @@ a:hover {
 .call-to-actions {
 	width:940px;
 	height:180px;
+	padding:0 0 0 10px;
+	margin:10px 0 30px 0;
 }
 .call-to-actions .cta {
 	float:left;
 	margin:0 20px 0 0;
 	border:0;
 	padding:0;
+}
+.call-to-actions .cta img {
+	box-shadow: 0px 5px 5px #999999;
 }
 
 
