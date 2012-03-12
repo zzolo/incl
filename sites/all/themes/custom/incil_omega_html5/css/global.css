@@ -89,8 +89,18 @@ a:hover {
   padding:50px 0 0 0;
   background: url(../images/headerBar.gif) no-repeat;
   width:940px;
-  z-index:999;
 }
+.call-to-actions {
+	width:940px;
+	height:180px;
+}
+.call-to-actions .cta {
+	float:left;
+	margin:0 20px 0 0;
+	border:0;
+	padding:0;
+}
+
 
 /**
  * User Menus
