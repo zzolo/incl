@@ -341,8 +341,8 @@ a:hover {
  * Illustration
  */
 .front .region-top {
-  padding-top: 219px;
-  background: transparent url('../images/home-illustration.png') top center no-repeat;
+  padding-top: 0;
+  background: transparent url('../images/home-illustration.png') center 219px no-repeat;
 }
 
 /**
