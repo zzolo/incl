@@ -228,7 +228,7 @@ a:hover {
 .social-container {
   width: 85px;
   float: right;
-  margin-left:10px;
+  margin-right:10px;
 }
 .social-container a {
   display: block;
