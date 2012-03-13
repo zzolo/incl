@@ -94,7 +94,7 @@ a:hover {
 	width:940px;
 	height:180px;
 	padding:0;
-	margin:10px 0 30px 0;
+	margin:10px 0 148px 0;
 }
 .call-to-actions .cta {
 	float:left;
@@ -341,7 +341,7 @@ a:hover {
  * Illustration
  */
 .front .region-top {
-  padding-top: 119px;
+  padding-top: 219px;
   background: transparent url('../images/home-illustration.png') top center no-repeat;
 }
 
